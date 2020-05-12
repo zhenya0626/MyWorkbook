@@ -1,5 +1,5 @@
 //
-//  SubjectCollectionViewCell.swift
+//  CheckCollectionViewCell.swift
 //  MyWorkbook
 //
 //  Created by abi01373 on 2020/05/12.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class SubjectCollectionViewCell: UICollectionViewCell {
+class CheckCollectionViewCell: UICollectionViewCell {
 
-//    @IBOutlet weak var subjectLablel: UILabel!
+    @IBOutlet weak var textLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     func setUpCell(text: String) {
-//        subjectLablel.text = text
+        textLabel.text = text
     }
 
 }

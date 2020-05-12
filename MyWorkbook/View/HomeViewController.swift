@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
+    let tmpArray = ["ああああああああああああ", "あ", "ああ", "あああ", "ああああ", "ああああああああ"]
     @IBOutlet weak var subjectCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -17,13 +17,8 @@ class HomeViewController: UIViewController {
         setUpNav()
 //        subjectCollectionView.delegate = self
         subjectCollectionView.dataSource = self
-        subjectCollectionView.register(UINib(nibName: "SubjectCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "SubjectCollectionViewCell")
-
-        // セルの大きさを設定
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: subjectCollectionView.frame.width, height: 100)
-        layout.scrollDirection = .horizontal
-        subjectCollectionView.collectionViewLayout = layout
+        subjectCollectionView.register(UINib(nibName: "CheckCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CheckCollectionViewCell")
+        subjectCollectionView.showsHorizontalScrollIndicator = false
 
     }
     @objc func toCategoryVC(sender: UIButton) {
@@ -34,16 +29,6 @@ class HomeViewController: UIViewController {
     func setUpNav(){
         // ステータスバーのタイトル色指定
         self.navigationController?.navigationBar.barStyle = .blackOpaque
-        // ステータスバーの背景色指定
-//        if #available(iOS 11.0, *) {
-//            let statusBarBackground = UIView(frame: CGRect(x: 0.0, y: 0.0,
-//              width: UIApplication.shared.statusBarFrame.size.width,
-//              height: UIApplication.shared.statusBarFrame.size.height))
-//            statusBarBackground.backgroundColor = UIColor.ultromarine_dark25
-//            self.view.addSubview(statusBarBackground)
-//        } else {
-//            UIApplication.shared.statusBarView?.backgroundColor = UIColor.ultramarine
-//        }
         // ナビゲーションバーのタイトル指定
         self.navigationItem.title = "HOME"
         // ナビゲーションバーのタイトル色指定
@@ -59,31 +44,27 @@ class HomeViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
-//extension HomeViewController: UICollectionViewDelegate {
-//
-//}
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        tmpArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = subjectCollectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionViewCell", for: indexPath) as! SubjectCollectionViewCell
-//        cell.setUpCell(text: "ああああああああああああ")
+        let cell = subjectCollectionView.dequeueReusableCell(withReuseIdentifier: "CheckCollectionViewCell", for: indexPath) as! CheckCollectionViewCell
+        cell.setUpCell(text: tmpArray[indexPath.item])
         return cell
     }
     
+    
+}
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellSize: CGFloat = view.frame.size.width/5
+        return CGSize(width: 0, height: cellSize)
+    }
+    
+
     
 }
 

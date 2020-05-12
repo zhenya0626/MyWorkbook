@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		692255092468698600D0D31F /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692255082468698600D0D31F /* UIApplication+.swift */; };
-		69225540246A0E7100D0D31F /* SubjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6922553E246A0E7100D0D31F /* SubjectCollectionViewCell.swift */; };
-		69225541246A0E7100D0D31F /* SubjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6922553F246A0E7100D0D31F /* SubjectCollectionViewCell.xib */; };
+		69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69225542246A9C7D00D0D31F /* CheckCollectionViewCell.swift */; };
+		69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69225543246A9C7D00D0D31F /* CheckCollectionViewCell.xib */; };
+		69225547246AC91B00D0D31F /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69225546246AC91B00D0D31F /* CheckBox.swift */; };
 		69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149A1246829A100F94D07 /* AppDelegate.swift */; };
 		69A149A4246829A100F94D07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149A3246829A100F94D07 /* SceneDelegate.swift */; };
 		69A149AC246829A100F94D07 /* MyWorkbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69A149AA246829A100F94D07 /* MyWorkbook.xcdatamodeld */; };
@@ -28,8 +29,9 @@
 
 /* Begin PBXFileReference section */
 		692255082468698600D0D31F /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
-		6922553E246A0E7100D0D31F /* SubjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionViewCell.swift; sourceTree = "<group>"; };
-		6922553F246A0E7100D0D31F /* SubjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionViewCell.xib; sourceTree = "<group>"; };
+		69225542246A9C7D00D0D31F /* CheckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCollectionViewCell.swift; sourceTree = "<group>"; };
+		69225543246A9C7D00D0D31F /* CheckCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckCollectionViewCell.xib; sourceTree = "<group>"; };
+		69225546246AC91B00D0D31F /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		69A1499E246829A100F94D07 /* MyWorkbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorkbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A149A1246829A100F94D07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A149A3246829A100F94D07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,8 +64,8 @@
 		6922550A2468752600D0D31F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6922553E246A0E7100D0D31F /* SubjectCollectionViewCell.swift */,
-				6922553F246A0E7100D0D31F /* SubjectCollectionViewCell.xib */,
+				69225542246A9C7D00D0D31F /* CheckCollectionViewCell.swift */,
+				69225543246A9C7D00D0D31F /* CheckCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -120,6 +122,7 @@
 			children = (
 				69A149CA2468637A00F94D07 /* UIColor+.swift */,
 				692255082468698600D0D31F /* UIApplication+.swift */,
+				69225546246AC91B00D0D31F /* CheckBox.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -183,12 +186,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A149C024683F4F00F94D07 /* CategoryViewController.xib in Resources */,
+				69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */,
 				69A149B1246829A300F94D07 /* LaunchScreen.storyboard in Resources */,
 				69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */,
 				69A149C42468400100F94D07 /* PracticeViewController.xib in Resources */,
 				69A149AE246829A300F94D07 /* Assets.xcassets in Resources */,
 				69A149BC246829F100F94D07 /* HomeViewController.xib in Resources */,
-				69225541246A0E7100D0D31F /* SubjectCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,13 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */,
+				69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */,
 				69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */,
 				69A149BF24683F4F00F94D07 /* CategoryViewController.swift in Sources */,
 				69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */,
 				69A149A4246829A100F94D07 /* SceneDelegate.swift in Sources */,
 				692255092468698600D0D31F /* UIApplication+.swift in Sources */,
 				69A149C32468400100F94D07 /* PracticeViewController.swift in Sources */,
-				69225540246A0E7100D0D31F /* SubjectCollectionViewCell.swift in Sources */,
+				69225547246AC91B00D0D31F /* CheckBox.swift in Sources */,
 				69A149AC246829A100F94D07 /* MyWorkbook.xcdatamodeld in Sources */,
 				69A149BB246829F100F94D07 /* HomeViewController.swift in Sources */,
 			);
