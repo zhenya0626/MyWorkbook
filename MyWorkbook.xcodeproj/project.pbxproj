@@ -25,6 +25,8 @@
 		69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149C5246840B100F94D07 /* ProblemViewController.swift */; };
 		69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149C6246840B100F94D07 /* ProblemViewController.xib */; };
 		69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149CA2468637A00F94D07 /* UIColor+.swift */; };
+		69DC8414246C091E00733E8C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8413246C091E00733E8C /* CategoryView.swift */; };
+		69DC8416246C092E00733E8C /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DC8415246C092E00733E8C /* CategoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		69A149C5246840B100F94D07 /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		69A149C6246840B100F94D07 /* ProblemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProblemViewController.xib; sourceTree = "<group>"; };
 		69A149CA2468637A00F94D07 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		69DC8413246C091E00733E8C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		69DC8415246C092E00733E8C /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +108,8 @@
 		69A149B8246829E100F94D07 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6922550A2468752600D0D31F /* Cell */,
-				69A149B9246829F100F94D07 /* HomeViewController.swift */,
-				69A149BA246829F100F94D07 /* HomeViewController.xib */,
-				69A149BD24683F4F00F94D07 /* CategoryViewController.swift */,
-				69A149BE24683F4F00F94D07 /* CategoryViewController.xib */,
+				69DC840F246C057400733E8C /* Home */,
+				69DC840E246C055A00733E8C /* Category */,
 				69A149C12468400100F94D07 /* PracticeViewController.swift */,
 				69A149C22468400100F94D07 /* PracticeViewController.xib */,
 				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
@@ -125,6 +126,35 @@
 				69225546246AC91B00D0D31F /* CheckBox.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		69DC840E246C055A00733E8C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				69DC8412246C089700733E8C /* Module */,
+				69A149BD24683F4F00F94D07 /* CategoryViewController.swift */,
+				69A149BE24683F4F00F94D07 /* CategoryViewController.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		69DC840F246C057400733E8C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6922550A2468752600D0D31F /* Cell */,
+				69A149B9246829F100F94D07 /* HomeViewController.swift */,
+				69A149BA246829F100F94D07 /* HomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		69DC8412246C089700733E8C /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				69DC8413246C091E00733E8C /* CategoryView.swift */,
+				69DC8415246C092E00733E8C /* CategoryView.xib */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +217,7 @@
 			files = (
 				69A149C024683F4F00F94D07 /* CategoryViewController.xib in Resources */,
 				69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */,
+				69DC8416246C092E00733E8C /* CategoryView.xib in Resources */,
 				69A149B1246829A300F94D07 /* LaunchScreen.storyboard in Resources */,
 				69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */,
 				69A149C42468400100F94D07 /* PracticeViewController.xib in Resources */,
@@ -204,6 +235,7 @@
 			files = (
 				69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */,
 				69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */,
+				69DC8414246C091E00733E8C /* CategoryView.swift in Sources */,
 				69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */,
 				69A149BF24683F4F00F94D07 /* CategoryViewController.swift in Sources */,
 				69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */,

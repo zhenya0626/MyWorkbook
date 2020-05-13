@@ -14,9 +14,14 @@ class CheckCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
     func setUpCell(text: String) {
         textLabel.text = text
+        print("textLabel", textLabel.text)
+//        print("width", textLabel.text)
+
+        textLabel.sizeToFit()
     }
 
 }
