@@ -18,6 +18,11 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tagCollectionVIew: UICollectionView!
     
+    @IBOutlet weak var topStackView: NSLayoutConstraint!
+    
+    @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNav()
@@ -39,10 +44,44 @@ class HomeViewController: UIViewController {
         self.view.layoutIfNeeded()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        //キーボードが表示されるタイミングで呼び出される。
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(keyboardWillBeShown(notification:)),
+        name: UIResponder.keyboardWillShowNotification,
+        object: nil)
+        
+        // キーボードが消えるタイミングで呼び出される。
+        NotificationCenter.default.addObserver(self,
+        selector: #selector(keyboardWillBeHidden(notification:)),
+        name: UIResponder.keyboardWillHideNotification,
+        object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+
+    @objc func keyboardWillBeShown(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardFrame = userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+        topStackView.constant = view.bounds.height - (50 + 20)  - stackViewHeight.constant - keyboardFrame.height 
+        self.view.layoutIfNeeded()
+    }
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        topStackView.constant = 0
+        self.view.layoutIfNeeded()
+    }
+    
     @objc func toCategoryVC(sender: UIButton) {
         let categoryVC = CategoryViewController()
         categoryVC.modalPresentationStyle = .fullScreen
-//        self.present(categoryVC, animated: true, completion: nil)
          self.navigationController?.pushViewController(categoryVC, animated: true)
     }
     func setUpNav(){
@@ -78,7 +117,6 @@ extension HomeViewController: UICollectionViewDataSource {
         default:
             return 0
         }
-        
     }
     
     // セルの設定
@@ -87,16 +125,10 @@ extension HomeViewController: UICollectionViewDataSource {
 
         switch collectionView.tag {
         case 0:
-            print("0", tmpArray1[indexPath.item])
-            print(cell)
             cell.setUpCell(text: tmpArray1[indexPath.item])
         case 1:
-            print("1", tmpArray2[indexPath.item])
-            print(cell)
             cell.setUpCell(text: tmpArray2[indexPath.item])
         case 2:
-            print("2", tmpArray3[indexPath.item])
-            print(cell)
             cell.setUpCell(text: tmpArray3[indexPath.item])
         default:
             cell.setUpCell(text: tmpArray1[indexPath.item])
@@ -108,8 +140,9 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellSize: CGFloat = view.frame.size.width/5
-        return CGSize(width: 500, height: cellSize)
+        let cell = collectionView.cellForItem(at: indexPath) as! CheckCollectionViewCell
+        let cellSize = cell.textLabel.intrinsicContentSize
+        return collectionView.intrinsicContentSize
     }
     //縦の間隔を決定する
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -119,6 +152,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
- 
+
+}
+extension UICollectionView {
+    override open var intrinsicContentSize: CGSize {
+        return contentSize
+    }
 }
 

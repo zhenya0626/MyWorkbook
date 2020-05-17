@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -10,35 +10,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyWorkbook" customModuleProvider="target">
             <connections>
+                <outlet property="stackViewHeight" destination="qcP-wf-4XK" id="0kN-Yl-Cjh"/>
                 <outlet property="subjectCollectionView" destination="yfm-Lq-bJB" id="U3D-DG-7ti"/>
                 <outlet property="tagCollectionVIew" destination="Q19-gl-IOF" id="s1Y-Aq-0rB"/>
+                <outlet property="topStackView" destination="2n5-jn-57b" id="BBa-wp-Rq7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="workbookColectionView" destination="ky0-tq-9cw" id="VVM-vy-vzE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-gu-f1e">
-                    <rect key="frame" x="20" y="44" width="374" height="350"/>
+                    <rect key="frame" x="20" y="0.0" width="280" height="350"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索条件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F4-gy-AIo">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="eIK-2c-DXL"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-Lq-bJB">
-                            <rect key="frame" x="0.0" y="50" width="374" height="50"/>
+                            <rect key="frame" x="0.0" y="50" width="280" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="lbZ-ti-mT1"/>
                             </constraints>
+                            <viewLayoutGuide key="contentLayoutGuide" id="Rij-5S-EZG"/>
+                            <viewLayoutGuide key="frameLayoutGuide" id="BSO-og-UQ3"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ytZ-oy-vk8">
                                 <size key="itemSize" width="50" height="50"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,7 +48,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ky0-tq-9cw">
-                            <rect key="frame" x="0.0" y="100" width="374" height="50"/>
+                            <rect key="frame" x="0.0" y="100" width="280" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cHL-eo-i46"/>
@@ -60,7 +61,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Q19-gl-IOF">
-                            <rect key="frame" x="0.0" y="150" width="374" height="50"/>
+                            <rect key="frame" x="0.0" y="150" width="280" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="po8-kE-TqH"/>
@@ -72,35 +73,214 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-SS-0hD">
-                            <rect key="frame" x="0.0" y="200" width="374" height="50"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-Bq-wBE">
+                            <rect key="frame" x="0.0" y="200" width="280" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-4K-K0e">
+                                    <rect key="frame" x="5" y="10" width="43" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="F8t-fO-GuE"/>
+                                        <constraint firstAttribute="width" constant="43" id="vr4-dG-I4D"/>
+                                    </constraints>
+                                    <string key="text">解いた
+回数</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-Li-cZg" customClass="CheckBox" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="53" y="15" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="1oj-Li-cZg" secondAttribute="height" multiplier="1:1" id="3Fe-ND-bQf"/>
+                                        <constraint firstAttribute="height" constant="20" id="xsD-hk-ep8"/>
+                                    </constraints>
+                                    <state key="normal" image="chackbox_true"/>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oSb-YN-yEY" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="78" y="12.5" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="LCm-Fc-Npn"/>
+                                        <constraint firstAttribute="width" constant="30" id="vRy-XG-Blf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="〜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-Aj-v66">
+                                    <rect key="frame" x="113" y="15" width="17.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-Ep-INz" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="135.5" y="12.5" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="Cty-0c-ABM"/>
+                                        <constraint firstAttribute="width" constant="30" id="W6l-Qk-7Sf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="lV7-VV-zuK"/>
+                                <constraint firstItem="KfF-4K-K0e" firstAttribute="centerY" secondItem="l7B-Bq-wBE" secondAttribute="centerY" id="21P-Ra-Dx4"/>
+                                <constraint firstItem="2ff-Aj-v66" firstAttribute="leading" secondItem="oSb-YN-yEY" secondAttribute="trailing" constant="5" id="Cl5-KI-wDo"/>
+                                <constraint firstItem="oSb-YN-yEY" firstAttribute="centerY" secondItem="l7B-Bq-wBE" secondAttribute="centerY" id="GbH-7z-N4B"/>
+                                <constraint firstItem="2ff-Aj-v66" firstAttribute="centerY" secondItem="l7B-Bq-wBE" secondAttribute="centerY" id="PRs-a7-q9k"/>
+                                <constraint firstAttribute="bottom" secondItem="1oj-Li-cZg" secondAttribute="bottom" constant="15" id="cWt-cB-a93"/>
+                                <constraint firstItem="1oj-Li-cZg" firstAttribute="leading" secondItem="KfF-4K-K0e" secondAttribute="trailing" constant="5" id="f3g-hg-lzO"/>
+                                <constraint firstItem="oSb-YN-yEY" firstAttribute="leading" secondItem="1oj-Li-cZg" secondAttribute="trailing" constant="5" id="fRj-tZ-4Xt"/>
+                                <constraint firstItem="jYF-Ep-INz" firstAttribute="leading" secondItem="2ff-Aj-v66" secondAttribute="trailing" constant="5" id="fli-5D-Ps2"/>
+                                <constraint firstAttribute="height" constant="50" id="pEn-Rf-Oq7"/>
+                                <constraint firstItem="1oj-Li-cZg" firstAttribute="top" secondItem="l7B-Bq-wBE" secondAttribute="top" constant="15" id="ruf-G4-Lsr"/>
+                                <constraint firstItem="jYF-Ep-INz" firstAttribute="centerY" secondItem="l7B-Bq-wBE" secondAttribute="centerY" id="v89-Vw-ICP"/>
+                                <constraint firstItem="KfF-4K-K0e" firstAttribute="leading" secondItem="l7B-Bq-wBE" secondAttribute="leading" constant="5" id="vYz-iM-Scl"/>
                             </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIa-46-wbJ">
-                            <rect key="frame" x="0.0" y="250" width="374" height="50"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-m0-sye">
+                            <rect key="frame" x="0.0" y="250" width="280" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-gb-pxc" customClass="CheckBox" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="53" y="15" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="2PC-dT-it4"/>
+                                        <constraint firstAttribute="width" secondItem="kc0-gb-pxc" secondAttribute="height" multiplier="1:1" id="ulL-M6-xxJ"/>
+                                    </constraints>
+                                    <state key="normal" image="chackbox_true"/>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gyl-W6-1fj" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="78" y="12.5" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="i9u-T0-GdV"/>
+                                        <constraint firstAttribute="height" constant="25" id="tSX-IJ-XKl"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="〜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isz-iD-bkK">
+                                    <rect key="frame" x="113" y="15" width="17.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaQ-ZF-Jo9" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="135.5" y="12.5" width="30" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="ANr-fs-jFd"/>
+                                        <constraint firstAttribute="width" constant="30" id="lp7-ro-ade"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回答時間" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-N0-kmP">
+                                    <rect key="frame" x="5" y="10" width="43" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="43" id="qpC-u8-40D"/>
+                                        <constraint firstAttribute="height" constant="30" id="rTP-n2-TA9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="Jpl-Vl-f3k"/>
+                                <constraint firstItem="Gyl-W6-1fj" firstAttribute="leading" secondItem="kc0-gb-pxc" secondAttribute="trailing" constant="5" id="Mal-Gk-2NJ"/>
+                                <constraint firstItem="Gyl-W6-1fj" firstAttribute="centerY" secondItem="p0v-m0-sye" secondAttribute="centerY" id="RMs-QO-Qwq"/>
+                                <constraint firstItem="kc0-gb-pxc" firstAttribute="top" secondItem="p0v-m0-sye" secondAttribute="top" constant="15" id="Y5K-tK-wvR"/>
+                                <constraint firstItem="kc0-gb-pxc" firstAttribute="leading" secondItem="9zx-N0-kmP" secondAttribute="trailing" constant="5" id="ZOe-Lh-DBz"/>
+                                <constraint firstItem="isz-iD-bkK" firstAttribute="centerY" secondItem="p0v-m0-sye" secondAttribute="centerY" id="ejJ-YF-dUD"/>
+                                <constraint firstItem="9zx-N0-kmP" firstAttribute="leading" secondItem="p0v-m0-sye" secondAttribute="leading" constant="5" id="hxu-bh-aG2"/>
+                                <constraint firstAttribute="height" constant="50" id="o8O-vB-6sg"/>
+                                <constraint firstItem="TaQ-ZF-Jo9" firstAttribute="centerY" secondItem="p0v-m0-sye" secondAttribute="centerY" id="qjL-Ng-Ak2"/>
+                                <constraint firstItem="TaQ-ZF-Jo9" firstAttribute="leading" secondItem="isz-iD-bkK" secondAttribute="trailing" constant="5" id="rKD-OQ-S8B"/>
+                                <constraint firstAttribute="bottom" secondItem="kc0-gb-pxc" secondAttribute="bottom" constant="15" id="t2e-v5-EOF"/>
+                                <constraint firstItem="9zx-N0-kmP" firstAttribute="centerY" secondItem="p0v-m0-sye" secondAttribute="centerY" id="w6t-j9-pTs"/>
+                                <constraint firstItem="isz-iD-bkK" firstAttribute="leading" secondItem="Gyl-W6-1fj" secondAttribute="trailing" constant="5" id="wte-C0-hpg"/>
                             </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hT4-Ob-yug">
-                            <rect key="frame" x="0.0" y="300" width="374" height="50"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-D9-xSk">
+                            <rect key="frame" x="0.0" y="300" width="280" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ok-P8-Msg">
+                                    <rect key="frame" x="5" y="10" width="43" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="JlY-0A-iLB"/>
+                                        <constraint firstAttribute="width" constant="43" id="Zk0-q9-dgh"/>
+                                    </constraints>
+                                    <string key="text">最後に
+解いた日</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQ6-We-6Ux" customClass="CheckBox" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="53" y="15" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="hcl-Rv-gAP"/>
+                                        <constraint firstAttribute="width" secondItem="YQ6-We-6Ux" secondAttribute="height" multiplier="1:1" id="v2v-w2-F2d"/>
+                                    </constraints>
+                                    <state key="normal" image="chackbox_true"/>
+                                </button>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2020/04/05" borderStyle="bezel" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-vZ-SFt" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="78" y="12.5" width="92" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="92" id="ZL8-ag-9ma"/>
+                                        <constraint firstAttribute="height" constant="25" id="gx4-uK-qCt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="〜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1o-XO-eB1">
+                                    <rect key="frame" x="175" y="15" width="17.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2020/05/15" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OzX-OI-3rj" customClass="CustomUITextField" customModule="MyWorkbook" customModuleProvider="target">
+                                    <rect key="frame" x="197.5" y="12.5" width="92" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="92" id="WAc-LA-PYf"/>
+                                        <constraint firstAttribute="height" constant="25" id="pfv-Ko-C0k"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="W4i-hr-9SH"/>
+                                <constraint firstItem="h1o-XO-eB1" firstAttribute="leading" secondItem="SoO-vZ-SFt" secondAttribute="trailing" constant="5" id="089-Tv-Zz9"/>
+                                <constraint firstItem="YQ6-We-6Ux" firstAttribute="leading" secondItem="8ok-P8-Msg" secondAttribute="trailing" constant="5" id="4ZY-oX-PzS"/>
+                                <constraint firstItem="h1o-XO-eB1" firstAttribute="centerY" secondItem="eNh-D9-xSk" secondAttribute="centerY" id="5oQ-SQ-Do6"/>
+                                <constraint firstItem="YQ6-We-6Ux" firstAttribute="top" secondItem="eNh-D9-xSk" secondAttribute="top" constant="15" id="8cx-Qt-Ds7"/>
+                                <constraint firstAttribute="bottom" secondItem="YQ6-We-6Ux" secondAttribute="bottom" constant="15" id="BJx-SR-igx"/>
+                                <constraint firstItem="SoO-vZ-SFt" firstAttribute="centerY" secondItem="eNh-D9-xSk" secondAttribute="centerY" id="FCZ-lP-2o2"/>
+                                <constraint firstItem="8ok-P8-Msg" firstAttribute="leading" secondItem="eNh-D9-xSk" secondAttribute="leading" constant="5" id="Gjr-RC-5FT"/>
+                                <constraint firstItem="8ok-P8-Msg" firstAttribute="centerY" secondItem="eNh-D9-xSk" secondAttribute="centerY" id="LIE-O7-WzY"/>
+                                <constraint firstItem="OzX-OI-3rj" firstAttribute="leading" secondItem="h1o-XO-eB1" secondAttribute="trailing" constant="5" id="Nue-80-pLB"/>
+                                <constraint firstItem="OzX-OI-3rj" firstAttribute="centerY" secondItem="eNh-D9-xSk" secondAttribute="centerY" id="gv1-bH-7th"/>
+                                <constraint firstAttribute="height" constant="50" id="oLf-NG-gx4"/>
+                                <constraint firstItem="SoO-vZ-SFt" firstAttribute="leading" secondItem="YQ6-We-6Ux" secondAttribute="trailing" constant="5" id="tzi-A9-62F"/>
                             </constraints>
-                        </stackView>
+                        </view>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="350" id="qcP-wf-4XK"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2FU-CL-xdS"/>
+                <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2n5-jn-57b"/>
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5hY-Xc-WwI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sUA-gu-f1e" secondAttribute="trailing" constant="20" id="8ue-n3-W1A"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="136.875" y="117.25352112676056"/>
         </view>
     </objects>
+    <resources>
+        <image name="chackbox_true" width="455" height="454"/>
+    </resources>
 </document>

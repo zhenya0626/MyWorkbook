@@ -19,4 +19,9 @@ extension UIColor {
     class var ultromarine_dark25: UIColor {
         return UIColor(named: "ultromarine_dark25")!
     }
+    /// mintgreen RGB:#5BB089
+    class var mintgreen: UIColor{
+        return UIColor(named: "mintgreen")!
+    }
+    
 }

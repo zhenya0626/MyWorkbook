@@ -19,9 +19,8 @@ class CheckCollectionViewCell: UICollectionViewCell {
     func setUpCell(text: String) {
         textLabel.text = text
         print("textLabel", textLabel.text)
-//        print("width", textLabel.text)
-
         textLabel.sizeToFit()
+
     }
 
 }
