@@ -21,6 +21,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var topStackView: NSLayoutConstraint!
     
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var toggleSearchCriteriaButton: UIButton!
+    
+    var isOpen = false
 
     
     override func viewDidLoad() {
@@ -41,6 +45,11 @@ class HomeViewController: UIViewController {
         tagCollectionVIew.dataSource = self
         tagCollectionVIew.register(UINib(nibName: "CheckCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CheckCollectionViewCell")
         tagCollectionVIew.showsHorizontalScrollIndicator = false
+        
+        topStackView.constant = -350
+//        isOpen = false
+        toggleSearchCriteriaButton.setTitle("検索条件を変更する", for: .normal)
+        toggleSearchCriteriaButton.setTitleColor(.gray, for: .normal)
         self.view.layoutIfNeeded()
         
     }
@@ -84,6 +93,29 @@ class HomeViewController: UIViewController {
         categoryVC.modalPresentationStyle = .fullScreen
          self.navigationController?.pushViewController(categoryVC, animated: true)
     }
+    
+@IBAction func toggleSearchAction(_ sender: Any) {
+    if isOpen {
+        topStackView.constant = -350
+        isOpen = false
+        toggleSearchCriteriaButton.setTitle("検索条件を変更する", for: .normal)
+        
+    } else {
+        topStackView.constant = 0
+        isOpen = true
+        toggleSearchCriteriaButton.setTitle("閉じる", for: .normal)
+    }
+    UIView.animate(
+        withDuration: 0.3,
+         delay: 0,
+         options:UIView.AnimationOptions.curveEaseOut,
+         animations: {() -> Void in
+             // これが大事!
+             self.view.layoutIfNeeded()
+         },
+         completion: nil
+     )
+}
     func setUpNav(){
         // ステータスバーのタイトル色指定
         self.navigationController?.navigationBar.barStyle = .blackOpaque
