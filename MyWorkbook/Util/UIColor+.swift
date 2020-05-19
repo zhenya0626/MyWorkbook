@@ -23,5 +23,9 @@ extension UIColor {
     class var mintgreen: UIColor{
         return UIColor(named: "mintgreen")!
     }
+    /// 薄いグレー  RGB:#CCCCCC
+    class var whitegray: UIColor {
+        return UIColor(named: "whitegray")!
+    }
     
 }

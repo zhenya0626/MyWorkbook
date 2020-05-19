@@ -18,6 +18,8 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tagCollectionVIew: UICollectionView!
     
+    @IBOutlet weak var questionTableView: UITableView!
+    
     @IBOutlet weak var topStackView: NSLayoutConstraint!
     
     @IBOutlet weak var stackViewHeight: NSLayoutConstraint!
@@ -45,6 +47,14 @@ class HomeViewController: UIViewController {
         tagCollectionVIew.dataSource = self
         tagCollectionVIew.register(UINib(nibName: "CheckCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CheckCollectionViewCell")
         tagCollectionVIew.showsHorizontalScrollIndicator = false
+        
+        
+        // 問題 テーブルビュー
+        questionTableView.dataSource = self
+        questionTableView.register(UINib(nibName: "QuestionTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionTableViewCell")
+        questionTableView.separatorStyle = .none
+        questionTableView.showsVerticalScrollIndicator = false
+        
         
         topStackView.constant = -350
 //        isOpen = false
@@ -191,4 +201,36 @@ extension UICollectionView {
         return contentSize
     }
 }
+
+extension HomeViewController: UITableViewDelegate {
+    
+
+    
+}
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell", for: indexPath) as! QuestionTableViewCell
+        cell.setUpCell()
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
+        cell.changeColor(color: .whitegray)
+    }
+    // セルがタップされた時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
+        cell.changeColor(color: .white)
+        //これを追加すれば解決
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+    }
+
+}
+
 

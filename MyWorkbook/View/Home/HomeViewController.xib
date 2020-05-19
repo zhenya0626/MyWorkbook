@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MyWorkbook" customModuleProvider="target">
             <connections>
+                <outlet property="questionTableView" destination="lPZ-7N-Fp2" id="FUE-98-Qpm"/>
                 <outlet property="stackViewHeight" destination="qcP-wf-4XK" id="0kN-Yl-Cjh"/>
                 <outlet property="subjectCollectionView" destination="yfm-Lq-bJB" id="U3D-DG-7ti"/>
                 <outlet property="tagCollectionVIew" destination="Q19-gl-IOF" id="s1Y-Aq-0rB"/>
@@ -25,16 +26,16 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sUA-gu-f1e">
-                    <rect key="frame" x="20" y="0.0" width="280" height="380"/>
+                    <rect key="frame" x="10" y="0.0" width="300" height="380"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="検索条件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F4-gy-AIo">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yfm-Lq-bJB">
-                            <rect key="frame" x="0.0" y="50" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="50" width="300" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="lbZ-ti-mT1"/>
@@ -49,7 +50,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ky0-tq-9cw">
-                            <rect key="frame" x="0.0" y="100" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="100" width="300" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="cHL-eo-i46"/>
@@ -62,7 +63,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Q19-gl-IOF">
-                            <rect key="frame" x="0.0" y="150" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="150" width="300" height="50"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="po8-kE-TqH"/>
@@ -75,7 +76,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l7B-Bq-wBE">
-                            <rect key="frame" x="0.0" y="200" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="200" width="300" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfF-4K-K0e">
                                     <rect key="frame" x="5" y="10" width="43" height="30"/>
@@ -139,7 +140,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0v-m0-sye">
-                            <rect key="frame" x="0.0" y="250" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="250" width="300" height="50"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-gb-pxc" customClass="CheckBox" customModule="MyWorkbook" customModuleProvider="target">
                                     <rect key="frame" x="53" y="15" width="20" height="20"/>
@@ -201,7 +202,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-D9-xSk">
-                            <rect key="frame" x="0.0" y="300" width="280" height="50"/>
+                            <rect key="frame" x="0.0" y="300" width="300" height="50"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ok-P8-Msg">
                                     <rect key="frame" x="5" y="10" width="43" height="30"/>
@@ -265,7 +266,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9i-jE-Usq">
-                            <rect key="frame" x="0.0" y="350" width="280" height="30"/>
+                            <rect key="frame" x="0.0" y="350" width="300" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="t25-xU-vwD"/>
                             </constraints>
@@ -279,13 +280,21 @@
                         <constraint firstAttribute="height" constant="380" id="qcP-wf-4XK"/>
                     </constraints>
                 </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lPZ-7N-Fp2">
+                    <rect key="frame" x="10" y="378" width="300" height="170"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="sUA-gu-f1e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2FU-CL-xdS"/>
+                <constraint firstItem="sUA-gu-f1e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="2FU-CL-xdS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lPZ-7N-Fp2" secondAttribute="bottom" constant="20" id="2RP-m7-P3h"/>
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2n5-jn-57b"/>
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5hY-Xc-WwI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sUA-gu-f1e" secondAttribute="trailing" constant="20" id="8ue-n3-W1A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sUA-gu-f1e" secondAttribute="trailing" constant="10" id="8ue-n3-W1A"/>
+                <constraint firstItem="lPZ-7N-Fp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="KWj-F4-Kga"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lPZ-7N-Fp2" secondAttribute="trailing" constant="10" id="WlK-A0-Yy3"/>
+                <constraint firstItem="lPZ-7N-Fp2" firstAttribute="top" secondItem="sUA-gu-f1e" secondAttribute="bottom" constant="-2" id="s7Y-2m-diX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.875" y="117.25352112676056"/>
