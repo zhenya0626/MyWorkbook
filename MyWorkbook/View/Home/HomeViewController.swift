@@ -50,9 +50,16 @@ class HomeViewController: UIViewController {
         
         
         // 問題 テーブルビュー
-        questionTableView.dataSource = self
+        // ① カスタムセルを登録
         questionTableView.register(UINib(nibName: "QuestionTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionTableViewCell")
+
+        // ②-1 データソースを実装する - dataSourceにselfを設定
+        questionTableView.dataSource = self
+
+        // ③-1 セルとセルの間の線を消す
         questionTableView.separatorStyle = .none
+
+        // ③-2 スクロールバーを非表示にする
         questionTableView.showsVerticalScrollIndicator = false
         
         
@@ -207,18 +214,20 @@ extension HomeViewController: UITableViewDelegate {
 
     
 }
+// ②-2 データソースを実装する - UITableViewDataSourceを実装する
 extension HomeViewController: UITableViewDataSource {
+    // ②-3 データソースを実装する - セクションごとの行数を返します。
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return 5
     }
-    
+    // ②-4 データソースを実装する - 各セルを返します。
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell", for: indexPath) as! QuestionTableViewCell
         cell.setUpCell()
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }
-    
+   
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
         cell.changeColor(color: .whitegray)

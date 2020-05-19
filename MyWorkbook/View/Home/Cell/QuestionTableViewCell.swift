@@ -25,7 +25,6 @@ class QuestionTableViewCell: UITableViewCell {
     func setUpCell() {
         cellBackgroundView.layer.cornerRadius = 8
         cellBackgroundView.layer.masksToBounds = true
-
         cellBackgroundView.layer.masksToBounds = false
         cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
         cellBackgroundView.layer.shadowColor = UIColor.black.cgColor
