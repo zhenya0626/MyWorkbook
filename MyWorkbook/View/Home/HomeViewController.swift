@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     let tmpArray1 = ["数学Ⅰ", "数学Ⅱ", "物理", "化学演習", "英語"]
     let tmpArray2 = ["〇〇問題集", "数学ⅠA問題集", "〇〇式", "化学演習", "物理演習", "数学B問題集"]
     let tmpArray3 = ["2年前期 定期テスト", "苦手問題", "テストに出る！", "重要", "重要", "重要"]
+    let tmpArray4 = ["微分", "積分", "確率", "単振動", "有機化学", "文法"]
     @IBOutlet weak var subjectCollectionView: UICollectionView!
     
     @IBOutlet weak var workbookColectionView: UICollectionView!
@@ -218,12 +219,11 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: UITableViewDataSource {
     // ②-3 データソースを実装する - セクションごとの行数を返します。
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
+        return tmpArray4.count    }
     // ②-4 データソースを実装する - 各セルを返します。
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionTableViewCell", for: indexPath) as! QuestionTableViewCell
-        cell.setUpCell()
+        cell.setUpCell(text: tmpArray4[indexPath.item])
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         return cell
     }

@@ -11,6 +11,8 @@ import UIKit
 class QuestionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellBackgroundView: UIView!
+    
+    @IBOutlet weak var questionLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +24,9 @@ class QuestionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func setUpCell() {
+    func setUpCell(text: String) {
+        questionLabel.text = text
+        
         cellBackgroundView.layer.cornerRadius = 8
         cellBackgroundView.layer.masksToBounds = true
         cellBackgroundView.layer.masksToBounds = false

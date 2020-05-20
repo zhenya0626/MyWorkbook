@@ -73,6 +73,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="cellBackgroundView" destination="QJ8-wu-n8B" id="sU3-zG-6HL"/>
+                <outlet property="questionLabel" destination="ZZ4-gh-4Zi" id="COT-wy-08W"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="89.732142857142847"/>
         </tableViewCell>
