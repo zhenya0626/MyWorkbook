@@ -65,7 +65,6 @@ class HomeViewController: UIViewController {
         
         
         topStackView.constant = -350
-//        isOpen = false
         toggleSearchCriteriaButton.setTitle("検索条件を変更する", for: .normal)
         toggleSearchCriteriaButton.setTitleColor(.gray, for: .normal)
         self.view.layoutIfNeeded()

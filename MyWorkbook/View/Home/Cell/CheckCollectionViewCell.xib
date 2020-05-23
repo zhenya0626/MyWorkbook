@@ -10,10 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CheckCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CheckCollectionViewCell" customModule="MyWorkbook" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="97" height="27"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="infinite" reuseIdentifier="CheckCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CheckCollectionViewCell" customModule="MyWorkbook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="114" height="27"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="97" height="27"/>
+                <rect key="frame" x="0.0" y="0.0" width="114" height="27"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-Ls-uC6" customClass="CheckBox" customModule="MyWorkbook" customModuleProvider="target">
@@ -24,11 +24,10 @@
                         </constraints>
                         <state key="normal" image="chackbox_true"/>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTz-78-3YH">
-                        <rect key="frame" x="30" y="3" width="62" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="0.0" placeholderIntrinsicHeight="infinite" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTz-78-3YH">
+                        <rect key="frame" x="30" y="3" width="79" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="QHy-5j-tVm"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" id="kli-S5-Dgb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>

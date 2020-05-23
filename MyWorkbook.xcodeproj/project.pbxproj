@@ -13,6 +13,12 @@
 		69225547246AC91B00D0D31F /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69225546246AC91B00D0D31F /* CheckBox.swift */; };
 		692B86312473FB9F00A416BF /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B862F2473FB9F00A416BF /* QuestionTableViewCell.swift */; };
 		692B86322473FB9F00A416BF /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86302473FB9F00A416BF /* QuestionTableViewCell.xib */; };
+		692B86AC24788E9B00A416BF /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B86AA24788E9B00A416BF /* CategoryViewController.swift */; };
+		692B86AD24788E9B00A416BF /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86AB24788E9B00A416BF /* CategoryViewController.xib */; };
+		692B86B124788FB000A416BF /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B86AF24788FB000A416BF /* SubjectViewController.swift */; };
+		692B86B224788FB000A416BF /* SubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86B024788FB000A416BF /* SubjectViewController.xib */; };
+		692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B86B6247902B100A416BF /* CategoryTableViewCell.swift */; };
+		692B86B9247902B100A416BF /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86B7247902B100A416BF /* CategoryTableViewCell.xib */; };
 		6998950D246D9E5C0063E7C3 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998950C246D9E5C0063E7C3 /* CustomUITextField.swift */; };
 		6998950F246E111E0063E7C3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998950E246E111E0063E7C3 /* PaddingLabel.swift */; };
 		69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149A1246829A100F94D07 /* AppDelegate.swift */; };
@@ -22,15 +28,11 @@
 		69A149B1246829A300F94D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69A149AF246829A300F94D07 /* LaunchScreen.storyboard */; };
 		69A149BB246829F100F94D07 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149B9246829F100F94D07 /* HomeViewController.swift */; };
 		69A149BC246829F100F94D07 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149BA246829F100F94D07 /* HomeViewController.xib */; };
-		69A149BF24683F4F00F94D07 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149BD24683F4F00F94D07 /* CategoryViewController.swift */; };
-		69A149C024683F4F00F94D07 /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149BE24683F4F00F94D07 /* CategoryViewController.xib */; };
 		69A149C32468400100F94D07 /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149C12468400100F94D07 /* PracticeViewController.swift */; };
 		69A149C42468400100F94D07 /* PracticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149C22468400100F94D07 /* PracticeViewController.xib */; };
 		69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149C5246840B100F94D07 /* ProblemViewController.swift */; };
 		69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149C6246840B100F94D07 /* ProblemViewController.xib */; };
 		69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149CA2468637A00F94D07 /* UIColor+.swift */; };
-		69DC8414246C091E00733E8C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8413246C091E00733E8C /* CategoryView.swift */; };
-		69DC8416246C092E00733E8C /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69DC8415246C092E00733E8C /* CategoryView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,12 @@
 		69225546246AC91B00D0D31F /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		692B862F2473FB9F00A416BF /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		692B86302473FB9F00A416BF /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
+		692B86AA24788E9B00A416BF /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		692B86AB24788E9B00A416BF /* CategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
+		692B86AF24788FB000A416BF /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		692B86B024788FB000A416BF /* SubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectViewController.xib; sourceTree = "<group>"; };
+		692B86B6247902B100A416BF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		692B86B7247902B100A416BF /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		6998950C246D9E5C0063E7C3 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		6998950E246E111E0063E7C3 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		69A1499E246829A100F94D07 /* MyWorkbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorkbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,15 +59,11 @@
 		69A149B2246829A300F94D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A149B9246829F100F94D07 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		69A149BA246829F100F94D07 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		69A149BD24683F4F00F94D07 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		69A149BE24683F4F00F94D07 /* CategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		69A149C12468400100F94D07 /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		69A149C22468400100F94D07 /* PracticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PracticeViewController.xib; sourceTree = "<group>"; };
 		69A149C5246840B100F94D07 /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		69A149C6246840B100F94D07 /* ProblemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProblemViewController.xib; sourceTree = "<group>"; };
 		69A149CA2468637A00F94D07 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		69DC8413246C091E00733E8C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		69DC8415246C092E00733E8C /* CategoryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,40 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		692B86AE24788F8800A416BF /* StackedView */ = {
+			isa = PBXGroup;
+			children = (
+				692B86B52479026C00A416BF /* Cell */,
+				692B86AF24788FB000A416BF /* SubjectViewController.swift */,
+				692B86B024788FB000A416BF /* SubjectViewController.xib */,
+			);
+			path = StackedView;
+			sourceTree = "<group>";
+		};
+		692B86B32478DAB400A416BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				692B86B42478DAC400A416BF /* Category */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		692B86B42478DAC400A416BF /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		692B86B52479026C00A416BF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				692B86B6247902B100A416BF /* CategoryTableViewCell.swift */,
+				692B86B7247902B100A416BF /* CategoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		69A14995246829A100F94D07 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +141,7 @@
 		69A149A0246829A100F94D07 /* MyWorkbook */ = {
 			isa = PBXGroup;
 			children = (
+				692B86B32478DAB400A416BF /* ViewModel */,
 				69A149C92468619D00F94D07 /* Util */,
 				69A149B8246829E100F94D07 /* View */,
 				69A149A1246829A100F94D07 /* AppDelegate.swift */,
@@ -143,9 +182,9 @@
 		69DC840E246C055A00733E8C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				69DC8412246C089700733E8C /* Module */,
-				69A149BD24683F4F00F94D07 /* CategoryViewController.swift */,
-				69A149BE24683F4F00F94D07 /* CategoryViewController.xib */,
+				692B86AE24788F8800A416BF /* StackedView */,
+				692B86AA24788E9B00A416BF /* CategoryViewController.swift */,
+				692B86AB24788E9B00A416BF /* CategoryViewController.xib */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -158,15 +197,6 @@
 				69A149BA246829F100F94D07 /* HomeViewController.xib */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		69DC8412246C089700733E8C /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				69DC8413246C091E00733E8C /* CategoryView.swift */,
-				69DC8415246C092E00733E8C /* CategoryView.xib */,
-			);
-			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,13 +257,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69A149C024683F4F00F94D07 /* CategoryViewController.xib in Resources */,
+				692B86AD24788E9B00A416BF /* CategoryViewController.xib in Resources */,
+				692B86B9247902B100A416BF /* CategoryTableViewCell.xib in Resources */,
 				69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */,
-				69DC8416246C092E00733E8C /* CategoryView.xib in Resources */,
 				69A149B1246829A300F94D07 /* LaunchScreen.storyboard in Resources */,
 				69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */,
 				69A149C42468400100F94D07 /* PracticeViewController.xib in Resources */,
 				692B86322473FB9F00A416BF /* QuestionTableViewCell.xib in Resources */,
+				692B86B224788FB000A416BF /* SubjectViewController.xib in Resources */,
 				69A149AE246829A300F94D07 /* Assets.xcassets in Resources */,
 				69A149BC246829F100F94D07 /* HomeViewController.xib in Resources */,
 			);
@@ -248,12 +279,13 @@
 			files = (
 				69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */,
 				6998950F246E111E0063E7C3 /* PaddingLabel.swift in Sources */,
+				692B86AC24788E9B00A416BF /* CategoryViewController.swift in Sources */,
 				69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */,
-				69DC8414246C091E00733E8C /* CategoryView.swift in Sources */,
 				69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */,
 				6998950D246D9E5C0063E7C3 /* CustomUITextField.swift in Sources */,
 				692B86312473FB9F00A416BF /* QuestionTableViewCell.swift in Sources */,
-				69A149BF24683F4F00F94D07 /* CategoryViewController.swift in Sources */,
+				692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */,
+				692B86B124788FB000A416BF /* SubjectViewController.swift in Sources */,
 				69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */,
 				69A149A4246829A100F94D07 /* SceneDelegate.swift in Sources */,
 				692255092468698600D0D31F /* UIApplication+.swift in Sources */,
