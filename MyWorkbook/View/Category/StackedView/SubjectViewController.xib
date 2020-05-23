@@ -13,6 +13,7 @@
                 <outlet property="addButton" destination="KPS-jH-16T" id="iGI-sT-I8M"/>
                 <outlet property="tableHeight" destination="GmF-We-RQR" id="UM4-C4-RiA"/>
                 <outlet property="tableView" destination="RHD-LL-3Yt" id="Z6K-Cw-rpR"/>
+                <outlet property="textField" destination="Q3A-8n-zTq" id="cf7-7s-zwp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,6 +29,9 @@
                         <constraint firstAttribute="height" constant="48" id="RuZ-ga-19X"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="addButtonAction:" destination="-1" eventType="touchUpInside" id="cT2-4K-fxq"/>
+                    </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RHD-LL-3Yt">
                     <rect key="frame" x="20" y="64" width="369" height="266"/>
@@ -39,6 +43,7 @@
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q3A-8n-zTq">
                     <rect key="frame" x="95" y="356" width="219" height="34"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="34" id="bjZ-e5-MFf"/>
                         <constraint firstAttribute="width" constant="219" id="vls-LO-5vx"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

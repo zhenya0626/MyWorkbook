@@ -9,13 +9,16 @@
 import UIKit
 
 class SubjectViewController: UIViewController {
-
+    
+    var tmpData = ["ああああ","いいいいいい"]
 
     @IBOutlet weak var addButton: UIButton!
    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,9 @@ class SubjectViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
         tableView.separatorStyle = .none
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidHide(notification:)), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
      override func viewDidAppear(_ animated: Bool) {
         tableHeight.constant = tableView.contentSize.height
@@ -42,19 +48,39 @@ class SubjectViewController: UIViewController {
         self.view.layer.shadowRadius = 4
         
     }
-
+    @objc func keyboardWillBeShown(notification: Notification) {
+        
+    }
+    @objc func keyboardDidHide(notification: Notification) {
+        
+    }
+    @IBAction func addButtonAction(_ sender: Any) {
+        guard let text = textField.text, text != "" else { return }
+        tmpData.append(text)
+        updateTableView()
+        textField.text = ""
+        
+    }
+    func updateTableView() {
+       UIView.animate(withDuration: 0.0, animations: {
+           self.tableView.reloadData()
+       }) { (finished) in
+           self.tableView.layoutIfNeeded()
+        self.tableHeight.constant = self.tableView.contentSize.height
+       }
+    }
+    
 }
 
 extension SubjectViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        tmpData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
-        cell.setUpCell(text: "あああ")
+        cell.setUpCell(text: tmpData[indexPath.item])
         return cell
     }
-    
-    
+
 }
