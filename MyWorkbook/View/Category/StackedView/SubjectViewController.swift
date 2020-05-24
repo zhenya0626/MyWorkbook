@@ -10,6 +10,9 @@ import UIKit
 
 class SubjectViewController: UIViewController {
     
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    var sectionTitle = ""
+    
     var tmpData = ["ああああ","いいいいいい"]
 
     @IBOutlet weak var addButton: UIButton!
@@ -20,8 +23,10 @@ class SubjectViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        sectionTitleLabel.text = sectionTitle
         self.view.layer.cornerRadius = 20
         addButton.backgroundColor = .mintgreen
         addButton.setTitleColor(.white, for: .normal)
@@ -31,6 +36,7 @@ class SubjectViewController: UIViewController {
         addButton.layer.shadowOffset = CGSize(width: 1, height: 1)
         addButton.layer.shadowOpacity = 1
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
         tableView.separatorStyle = .none
         
@@ -40,12 +46,14 @@ class SubjectViewController: UIViewController {
      override func viewDidAppear(_ animated: Bool) {
         tableHeight.constant = tableView.contentSize.height
     }
-    func setup() {
+    func setup(sectionTitle: String) {
+        self.sectionTitle = sectionTitle
         self.view.backgroundColor = .whitegray
         self.view.layer.masksToBounds = false
         self.view.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.view.layer.shadowColor = UIColor.black.cgColor
         self.view.layer.shadowRadius = 4
+        self.tableView.backgroundColor = .whitegray
         
     }
     @objc func keyboardWillBeShown(notification: Notification) {
@@ -62,7 +70,7 @@ class SubjectViewController: UIViewController {
         
     }
     func updateTableView() {
-       UIView.animate(withDuration: 0.0, animations: {
+       UIView.animate(withDuration: 0.3, animations: {
            self.tableView.reloadData()
        }) { (finished) in
            self.tableView.layoutIfNeeded()
@@ -82,5 +90,55 @@ extension SubjectViewController: UITableViewDataSource{
         cell.setUpCell(text: tmpData[indexPath.item])
         return cell
     }
+    //セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    //スワイプしたセルを削除　※arrayNameは変数名に変更してください
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            tmpData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            updateTableView()
+        }
+    }
 
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCell.EditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    }
+    // 並び替えのみ有効
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .none
+//    }
+
+}
+extension SubjectViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+
+        // 削除のアクションを設定する
+        let deleteAction = UIContextualAction(style: .destructive, title:"delete") {
+            (ctxAction, view, completionHandler) in
+            self.tmpData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
+            self.updateTableView()
+        }
+        // 削除ボタンのデザインを設定する
+//        let trashImage = UIImage(systemName: "trash.fill")?.withTintColor(UIColor.white , renderingMode: .alwaysTemplate)
+//        deleteAction.image = trashImage
+        deleteAction.backgroundColor = .whitegray
+        deleteAction.title = "削除"
+        deleteAction.image =  UIImage(named: "trash")
+
+        // スワイプでの削除を無効化して設定する
+        let swipeAction = UISwipeActionsConfiguration(actions:[deleteAction])
+        swipeAction.performsFirstActionWithFullSwipe = true
+       
+        return swipeAction
+
+    }
 }

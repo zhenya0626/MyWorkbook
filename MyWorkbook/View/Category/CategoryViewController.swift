@@ -12,6 +12,7 @@ class CategoryViewController: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var scrollView: UIScrollView!
+    let sectionTitle = ["教科", "問題集", "タグ"]
     
     
     override func viewDidLoad() {
@@ -19,18 +20,18 @@ class CategoryViewController: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         
         let subject = SubjectViewController.init(nibName: "SubjectViewController", bundle: nil)
-        subject.setup()
+        subject.setup(sectionTitle: sectionTitle[0])
         addChild(subject)
         stackView.addArrangedSubview(subject.view)
         
         let workbook = SubjectViewController.init(nibName: "SubjectViewController", bundle: nil)
-        workbook.setup()
+        workbook.setup(sectionTitle: sectionTitle[1])
         addChild(workbook)
         stackView.addArrangedSubview(workbook.view)
         
         
         let tag = SubjectViewController.init(nibName: "SubjectViewController", bundle: nil)
-        tag.setup()
+        tag.setup(sectionTitle: sectionTitle[2])
         addChild(tag)
         stackView.addArrangedSubview(tag.view)
 
