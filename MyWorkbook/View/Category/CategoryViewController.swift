@@ -2,7 +2,7 @@
 //  CategoryViewController.swift
 //  MyWorkbook
 //
-//  Created by abi01373 on 2020/05/10.
+//  Created by abi01373 on 2020/05/24.
 //  Copyright © 2020 zhenya. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ class CategoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
 
