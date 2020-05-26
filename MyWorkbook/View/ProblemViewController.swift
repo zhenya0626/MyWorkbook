@@ -10,10 +10,25 @@ import UIKit
 
 class ProblemViewController: UIViewController {
 
+    @IBOutlet weak var questionImage: UIImageView!
+    @IBOutlet weak var questionImageHeight: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var answerImage: UIImageView!
+    
+    @IBOutlet weak var answerImageHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let img1 = UIImage(named: "biseki")
+        let w1 = img1?.size.width ?? 0
+        let h1 = img1?.size.height ?? 1
+        questionImageHeight.constant = questionImage.frame.width / w1 * h1
+        
+        let img2 = UIImage(named: "biseki")
+        let w2 = img2?.size.width ?? 0
+        let h2 = img2?.size.height ?? 1
+        answerImageHeight.constant = questionImage.frame.width / w2 * h2
+        
     }
 
 

@@ -88,6 +88,7 @@ extension SubjectViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as! CategoryTableViewCell
         cell.setUpCell(text: tmpData[indexPath.item])
+        cell.selectionStyle = .none
         return cell
     }
     //セルの編集許可

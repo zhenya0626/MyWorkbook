@@ -284,6 +284,19 @@
                     <rect key="frame" x="10" y="378" width="300" height="170"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOF-0h-dNm">
+                    <rect key="frame" x="260" y="508" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="paa-VZ-uVq"/>
+                        <constraint firstAttribute="height" constant="40" id="sa8-a5-u3L"/>
+                    </constraints>
+                    <state key="normal" image="plus">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addQuestionButton:" destination="-1" eventType="touchUpInside" id="YEV-Ae-czd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -292,9 +305,11 @@
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2n5-jn-57b"/>
                 <constraint firstItem="sUA-gu-f1e" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5hY-Xc-WwI"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sUA-gu-f1e" secondAttribute="trailing" constant="10" id="8ue-n3-W1A"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sOF-0h-dNm" secondAttribute="trailing" constant="20" id="ErC-3m-tV1"/>
                 <constraint firstItem="lPZ-7N-Fp2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="KWj-F4-Kga"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lPZ-7N-Fp2" secondAttribute="trailing" constant="10" id="WlK-A0-Yy3"/>
                 <constraint firstItem="lPZ-7N-Fp2" firstAttribute="top" secondItem="sUA-gu-f1e" secondAttribute="bottom" constant="-2" id="s7Y-2m-diX"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sOF-0h-dNm" secondAttribute="bottom" constant="20" id="umb-jQ-4Nt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.875" y="117.25352112676056"/>
@@ -302,5 +317,6 @@
     </objects>
     <resources>
         <image name="chackbox_true" width="455" height="454"/>
+        <image name="plus" width="512" height="512"/>
     </resources>
 </document>

@@ -149,6 +149,13 @@ class HomeViewController: UIViewController {
         // ナビゲーションアイテムを右に配置
         self.navigationItem.setRightBarButton(rightBarButton, animated: true)
     }
+    
+    @IBAction func addQuestionButton(_ sender: Any) {
+        let probremVC = ProblemViewController()
+//        probremVC.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(probremVC, animated: true)
+    }
+    
 
 
 }
