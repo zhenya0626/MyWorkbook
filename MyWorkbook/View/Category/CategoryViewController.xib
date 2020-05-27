@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController" customModule="MyWorkbook" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="gNB-Ts-IAH" id="gZp-hu-JbF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,37 +23,7 @@
                     <rect key="frame" x="20" y="44" width="374" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="374" placeholderIntrinsicHeight="818" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gNB-Ts-IAH">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="1200"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-hN-zgJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="mDS-kJ-c3a"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5WZ-eK-XEp">
-                                    <rect key="frame" x="0.0" y="300" width="374" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="TvJ-SN-1Mq"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-Ch-7fC">
-                                    <rect key="frame" x="0.0" y="600" width="374" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="SJW-YF-BN6"/>
-                                    </constraints>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xrx-wh-Xro">
-                                    <rect key="frame" x="0.0" y="900" width="374" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="300" id="pMW-Ge-OM7"/>
-                                    </constraints>
-                                </view>
-                            </subviews>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="818"/>
                         </stackView>
                     </subviews>
                     <constraints>
