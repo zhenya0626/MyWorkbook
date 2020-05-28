@@ -23,7 +23,6 @@ class ProblemViewController: UIViewController {
     var workBookPickerView: UIPickerView = UIPickerView()
     
     @IBOutlet weak var answerImage: UIImageView!
-    
     @IBOutlet weak var answerImageHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +82,27 @@ class ProblemViewController: UIViewController {
     @objc func done2() {
         self.workBookTextField.endEditing(true)
     }
+    
+    @IBAction func addQuestionImage(_ sender: Any) {
+        let picker = UIImagePickerController() //アルバムを開く処理を呼び出す
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.view.tag = 0
+        present(picker, animated: true)
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func addAnswerImage(_ sender: Any) {
+        let picker = UIImagePickerController() //アルバムを開く処理を呼び出す
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.view.tag = 1
+        present(picker, animated: true)
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    
 
 }
 extension ProblemViewController: UIPickerViewDelegate {
@@ -122,3 +142,27 @@ extension ProblemViewController: UIPickerViewDataSource {
     
     
 }
+
+extension ProblemViewController: UIImagePickerControllerDelegate{
+    // 画像が選択された時に呼ばれる
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])  {
+          if let selectedImage = info[.originalImage] as? UIImage {
+            if picker.view?.tag == 0 {
+                questionImage.image = selectedImage
+            } else {
+                answerImage.image = selectedImage
+            }
+            //imageViewにカメラロールから選んだ画像を表示する
+          }
+          self.dismiss(animated: true)  //画像をImageViewに表示したらアルバムを閉じる
+      }
+      
+      // 画像選択がキャンセルされた時に呼ばれる
+      func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+          self.dismiss(animated: true, completion: nil)
+      }
+}
+extension ProblemViewController: UINavigationControllerDelegate{
+    
+}
+
