@@ -9,10 +9,18 @@
 import UIKit
 
 class ProblemViewController: UIViewController {
-
+    
+    let subjectList = ["数学", "物理", "英語"]
+    let workBookList = ["数学の問題集", "物理の問題集", "英語の問題集"]
+    
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var questionImageHeight: NSLayoutConstraint!
     
+    @IBOutlet weak var subjectTextField: UITextField!
+    @IBOutlet weak var workBookTextField: UITextField!
+    
+    var subjectPickerView: UIPickerView = UIPickerView()
+    var workBookPickerView: UIPickerView = UIPickerView()
     
     @IBOutlet weak var answerImage: UIImageView!
     
@@ -29,17 +37,88 @@ class ProblemViewController: UIViewController {
         let h2 = img2?.size.height ?? 1
         answerImageHeight.constant = questionImage.frame.width / w2 * h2
         
+        
+        subjectPickerView.delegate = self
+        subjectPickerView.dataSource = self
+        subjectPickerView.showsSelectionIndicator = true
+        subjectPickerView.tag = 0
+        
+        workBookPickerView.delegate = self
+        workBookPickerView.dataSource = self
+        workBookPickerView.showsSelectionIndicator = true
+        workBookPickerView.tag = 1
+        
+
+        let toolbar1 = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
+        let doneItem1 = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done1))
+        let cancelItem1 = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel1))
+        toolbar1.setItems([cancelItem1, doneItem1], animated: true)
+
+        self.subjectTextField.inputView = subjectPickerView
+        self.subjectTextField.inputAccessoryView = toolbar1
+        
+        
+        let toolbar2 = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
+        let doneItem2 = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.done2))
+        let cancelItem2 = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel2))
+        toolbar2.setItems([cancelItem2, doneItem2], animated: true)
+        
+        self.workBookTextField.inputView = workBookPickerView
+        self.workBookTextField.inputAccessoryView = toolbar2
+        
+    }
+    @objc func cancel1() {
+        self.subjectTextField.text = ""
+        self.subjectTextField.endEditing(true)
+    }
+
+    @objc func done1() {
+        self.subjectTextField.endEditing(true)
+    }
+    @objc func cancel2() {
+        self.workBookTextField.text = ""
+        self.workBookTextField.endEditing(true)
+    }
+
+    @objc func done2() {
+        self.workBookTextField.endEditing(true)
+    }
+
+}
+extension ProblemViewController: UIPickerViewDelegate {
+    
+}
+extension ProblemViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag == 0 {
+            return subjectList.count
+        } else {
+            return workBookList.count
+        }
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 0 {
+            return subjectList[row]
+        } else {
+            return workBookList[row]
+        }
+        
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag == 0 {
+            self.subjectTextField.text = subjectList[row]
+        } else {
+            self.workBookTextField.text = workBookList[row]
+        }
+        
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

@@ -15,7 +15,9 @@
                 <outlet property="answerImageHeight" destination="Suh-9i-IoE" id="6Gz-Xy-QlZ"/>
                 <outlet property="questionImage" destination="92R-7r-WBp" id="fha-wu-jO4"/>
                 <outlet property="questionImageHeight" destination="GT3-r1-PUZ" id="79b-30-ohg"/>
+                <outlet property="subjectTextField" destination="Yyo-Iq-1o7" id="Wdb-jp-3YC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="workBookTextField" destination="WOY-01-NmK" id="nd1-Q7-gS5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -59,7 +61,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqq-hf-M1E">
                                     <rect key="frame" x="0.0" y="115" width="374" height="115"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WOY-01-NmK">
+                                        <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WOY-01-NmK">
                                             <rect key="frame" x="50" y="56" width="274" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -317,7 +319,7 @@
         <image name="biseki" width="526" height="175"/>
         <image name="plus" width="512" height="512"/>
         <namedColor name="mintgreen">
-            <color red="0.35686274509803922" green="0.69019607843137254" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.35699999332427979" green="0.68999999761581421" blue="0.53700000047683716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
