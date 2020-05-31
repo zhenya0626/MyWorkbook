@@ -110,12 +110,8 @@ class ProblemViewController: UIViewController {
     @IBAction func tappedSubjectTextField(_ sender: Any) {
         let pickerModalVC = PickerModalViewController()
         pickerModalVC.delegate = self
-        pickerModalVC.modalPresentationStyle = .overCurrentContext
         self.present(pickerModalVC, animated: true, completion: nil)
     }
-    
-    
-
 }
 extension ProblemViewController: UIPickerViewDelegate {
     

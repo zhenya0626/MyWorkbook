@@ -16,6 +16,7 @@ class PickerModalViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.transitioningDelegate = self
         contentView.layer.cornerRadius = 15
         tableView.dataSource = self
         tableView.delegate = self
@@ -67,4 +68,14 @@ extension PickerModalViewController: UITableViewDataSource {
     
     
 }
+extension PickerModalViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return HorizontalAnimator(scrollDirection: .left)
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return HorizontalAnimator(scrollDirection: .right)
+    }
+}
+
 

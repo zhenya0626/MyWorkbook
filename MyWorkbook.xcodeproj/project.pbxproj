@@ -37,6 +37,7 @@
 		69EBD575248345AB0094A2D0 /* PickerModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EBD573248345AB0094A2D0 /* PickerModalViewController.xib */; };
 		69EBD57924834DC00094A2D0 /* PickerModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */; };
 		69EBD57A24834DC00094A2D0 /* PickerModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */; };
+		69EBD57D2483E0EB0094A2D0 /* CustomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD57C2483E0EB0094A2D0 /* CustomAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		69EBD573248345AB0094A2D0 /* PickerModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerModalViewController.xib; sourceTree = "<group>"; };
 		69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModalTableViewCell.swift; sourceTree = "<group>"; };
 		69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerModalTableViewCell.xib; sourceTree = "<group>"; };
+		69EBD57C2483E0EB0094A2D0 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		69A149B8246829E100F94D07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				69EBD57B2483E0B10094A2D0 /* Transition */,
 				69EBD5702481F4820094A2D0 /* Problem */,
 				69DC840F246C057400733E8C /* Home */,
 				69DC840E246C055A00733E8C /* Category */,
@@ -233,6 +236,14 @@
 				69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		69EBD57B2483E0B10094A2D0 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				69EBD57C2483E0EB0094A2D0 /* CustomAnimator.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */,
+				69EBD57D2483E0EB0094A2D0 /* CustomAnimator.swift in Sources */,
 				6998950F246E111E0063E7C3 /* PaddingLabel.swift in Sources */,
 				692B86AC24788E9B00A416BF /* CategoryViewController.swift in Sources */,
 				69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */,
