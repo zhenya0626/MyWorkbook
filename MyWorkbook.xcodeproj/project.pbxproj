@@ -33,6 +33,10 @@
 		69A149C7246840B100F94D07 /* ProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149C5246840B100F94D07 /* ProblemViewController.swift */; };
 		69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69A149C6246840B100F94D07 /* ProblemViewController.xib */; };
 		69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149CA2468637A00F94D07 /* UIColor+.swift */; };
+		69EBD574248345AB0094A2D0 /* PickerModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD572248345AB0094A2D0 /* PickerModalViewController.swift */; };
+		69EBD575248345AB0094A2D0 /* PickerModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EBD573248345AB0094A2D0 /* PickerModalViewController.xib */; };
+		69EBD57924834DC00094A2D0 /* PickerModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */; };
+		69EBD57A24834DC00094A2D0 /* PickerModalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		69A149C5246840B100F94D07 /* ProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemViewController.swift; sourceTree = "<group>"; };
 		69A149C6246840B100F94D07 /* ProblemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProblemViewController.xib; sourceTree = "<group>"; };
 		69A149CA2468637A00F94D07 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		69EBD572248345AB0094A2D0 /* PickerModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModalViewController.swift; sourceTree = "<group>"; };
+		69EBD573248345AB0094A2D0 /* PickerModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerModalViewController.xib; sourceTree = "<group>"; };
+		69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModalTableViewCell.swift; sourceTree = "<group>"; };
+		69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerModalTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +209,30 @@
 		69EBD5702481F4820094A2D0 /* Problem */ = {
 			isa = PBXGroup;
 			children = (
+				69EBD5712483457D0094A2D0 /* PickerModal */,
 				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
 				69A149C6246840B100F94D07 /* ProblemViewController.xib */,
 			);
 			path = Problem;
+			sourceTree = "<group>";
+		};
+		69EBD5712483457D0094A2D0 /* PickerModal */ = {
+			isa = PBXGroup;
+			children = (
+				69EBD57624834D9C0094A2D0 /* cell */,
+				69EBD572248345AB0094A2D0 /* PickerModalViewController.swift */,
+				69EBD573248345AB0094A2D0 /* PickerModalViewController.xib */,
+			);
+			path = PickerModal;
+			sourceTree = "<group>";
+		};
+		69EBD57624834D9C0094A2D0 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */,
+				69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				692B86AD24788E9B00A416BF /* CategoryViewController.xib in Resources */,
+				69EBD575248345AB0094A2D0 /* PickerModalViewController.xib in Resources */,
 				692B86B9247902B100A416BF /* CategoryTableViewCell.xib in Resources */,
 				69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */,
 				69A149B1246829A300F94D07 /* LaunchScreen.storyboard in Resources */,
 				69A149C8246840B100F94D07 /* ProblemViewController.xib in Resources */,
 				69A149C42468400100F94D07 /* PracticeViewController.xib in Resources */,
+				69EBD57A24834DC00094A2D0 /* PickerModalTableViewCell.xib in Resources */,
 				692B86322473FB9F00A416BF /* QuestionTableViewCell.xib in Resources */,
 				692B86B224788FB000A416BF /* SubjectViewController.xib in Resources */,
 				69A149AE246829A300F94D07 /* Assets.xcassets in Resources */,
@@ -290,6 +320,8 @@
 				692B86AC24788E9B00A416BF /* CategoryViewController.swift in Sources */,
 				69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */,
 				69A149CB2468637A00F94D07 /* UIColor+.swift in Sources */,
+				69EBD57924834DC00094A2D0 /* PickerModalTableViewCell.swift in Sources */,
+				69EBD574248345AB0094A2D0 /* PickerModalViewController.swift in Sources */,
 				6998950D246D9E5C0063E7C3 /* CustomUITextField.swift in Sources */,
 				692B86312473FB9F00A416BF /* QuestionTableViewCell.swift in Sources */,
 				692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */,

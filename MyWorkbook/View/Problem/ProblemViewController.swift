@@ -11,6 +11,7 @@ import UIKit
 class ProblemViewController: UIViewController {
     
     let subjectList = ["数学", "物理", "英語"]
+    var subjectSelectedIndex = 0
     private var subjectSelectedLabel:UILabel!
     let workBookList = ["数学の問題集", "物理の問題集", "英語の問題集"]
     
@@ -54,7 +55,7 @@ class ProblemViewController: UIViewController {
         let cancelItem1 = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancel1))
         toolbar1.setItems([cancelItem1, doneItem1], animated: true)
 
-        self.subjectTextField.inputView = subjectPickerView
+//        self.subjectTextField.inputView = pickerModalVC.view
         self.subjectTextField.inputAccessoryView = toolbar1
         
         
@@ -106,6 +107,13 @@ class ProblemViewController: UIViewController {
         self.present(picker, animated: true, completion: nil)
     }
     
+    @IBAction func tappedSubjectTextField(_ sender: Any) {
+        let pickerModalVC = PickerModalViewController()
+        pickerModalVC.delegate = self
+        pickerModalVC.modalPresentationStyle = .overCurrentContext
+        self.present(pickerModalVC, animated: true, completion: nil)
+    }
+    
     
 
 }
@@ -124,15 +132,13 @@ extension ProblemViewController: UIPickerViewDataSource {
             return workBookList.count
         }
     }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if pickerView.tag == 0 {
-//            return subjectList[row]
-//        } else {
-//            return workBookList[row]
-//        }
-//
-//
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView.tag == 0 {
+            return subjectList[row]
+        } else {
+            return workBookList[row]
+        }
+    }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
             self.subjectTextField.text = subjectList[row]
@@ -140,35 +146,6 @@ extension ProblemViewController: UIPickerViewDataSource {
             self.workBookTextField.text = workBookList[row]
         }
         
-    }
-    // pickerに表示するUIViewを返す
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        
-        let pickerLabel = UILabel()
-        let titleData = subjectList[row] as! String
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "HiraKakuProN-W3", size: 20.0)!,NSAttributedString.Key.foregroundColor:UIColor.gray])
-
-        // fontサイズ、テキスト
-        pickerLabel.attributedText = myTitle
-        // 中央寄せ ※これを指定しないとセンターにならない
-        pickerLabel.textAlignment = NSTextAlignment.center
-        pickerLabel.frame = pickerView.frame
-        // ラベルを角丸に
-        pickerLabel.layer.masksToBounds = true
-        pickerLabel.layer.cornerRadius = 5.0
-        pickerLabel.backgroundColor = .mintgreen
-        pickerLabel.textColor = .white
-
-//               //  既存ラベル、選択状態のラベルが存在している
-//        if let lb = pickerView.view(forRow: row, forComponent: component) as? UILabel,
-//                    let selected = self.subjectSelectedLabel {
-//                    // 設定
-//                    self.subjectSelectedLabel = lb
-//            self.subjectSelectedLabel.backgroundColor = UIColor.orange
-//            self.subjectSelectedLabel.textColor = UIColor.white
-//                }
-
-                return pickerLabel
     }
     // pickerが選択された際に呼ばれる
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -206,6 +183,25 @@ extension ProblemViewController: UIImagePickerControllerDelegate{
       }
 }
 extension ProblemViewController: UINavigationControllerDelegate{
+    
+}
+
+extension ProblemViewController: PickerModalViewDelegate {
+    var selectedIndex: Int {
+        get {
+            subjectSelectedIndex
+        }
+        set {
+            subjectSelectedIndex = newValue
+            self.subjectTextField.text = subjectList[newValue]
+        }
+    }
+    
+    var list: [String] {
+        get {
+            self.subjectList
+        }
+    }
     
 }
 

@@ -36,8 +36,12 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yyo-Iq-1o7">
                                             <rect key="frame" x="50" y="56" width="274" height="34"/>
+                                            <gestureRecognizers/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="LJy-kM-gq7" appends="YES" id="rHG-Gj-Bbd"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="教科" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0d-eI-uZ7">
                                             <rect key="frame" x="50" y="25" width="35" height="20.5"/>
@@ -321,6 +325,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </view>
+        <tapGestureRecognizer id="LJy-kM-gq7">
+            <connections>
+                <action selector="tappedSubjectTextField:" destination="-1" id="AF5-cD-1g6"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="biseki" width="526" height="175"/>
