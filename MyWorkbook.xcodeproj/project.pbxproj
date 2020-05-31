@@ -157,12 +157,11 @@
 		69A149B8246829E100F94D07 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				69EBD5702481F4820094A2D0 /* Problem */,
 				69DC840F246C057400733E8C /* Home */,
 				69DC840E246C055A00733E8C /* Category */,
 				69A149C12468400100F94D07 /* PracticeViewController.swift */,
 				69A149C22468400100F94D07 /* PracticeViewController.xib */,
-				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
-				69A149C6246840B100F94D07 /* ProblemViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +196,15 @@
 				69A149BA246829F100F94D07 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		69EBD5702481F4820094A2D0 /* Problem */ = {
+			isa = PBXGroup;
+			children = (
+				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
+				69A149C6246840B100F94D07 /* ProblemViewController.xib */,
+			);
+			path = Problem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
