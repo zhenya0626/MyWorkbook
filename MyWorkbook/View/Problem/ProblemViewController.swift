@@ -10,7 +10,7 @@ import UIKit
 
 class ProblemViewController: UIViewController {
     
-    let subjectList = ["数学", "物理", "英語"]
+    let subjectList = ["数学", "物理", "英語", "化学"]
     var subjectSelectedIndex = 0
     private var subjectSelectedLabel:UILabel!
     let workBookList = ["数学の問題集", "物理の問題集", "英語の問題集"]
@@ -109,6 +109,8 @@ class ProblemViewController: UIViewController {
     
     @IBAction func tappedSubjectTextField(_ sender: Any) {
         let pickerModalVC = PickerModalViewController()
+        pickerModalVC.modalPresentationStyle = .custom
+        pickerModalVC.transitioningDelegate = self
         pickerModalVC.delegate = self
         self.present(pickerModalVC, animated: true, completion: nil)
     }
@@ -159,7 +161,7 @@ extension ProblemViewController: UIPickerViewDataSource {
     
 }
 
-extension ProblemViewController: UIImagePickerControllerDelegate{
+extension ProblemViewController: UIImagePickerControllerDelegate {
     // 画像が選択された時に呼ばれる
       func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])  {
           if let selectedImage = info[.originalImage] as? UIImage {
@@ -199,5 +201,91 @@ extension ProblemViewController: PickerModalViewDelegate {
         }
     }
     
+}
+
+extension ProblemViewController:  UIViewControllerTransitioningDelegate {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PickerModalAnimator(isPresentingDrawer: false)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PickerModalAnimator(isPresentingDrawer: true)
+    }
+}
+class PickerModalAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    let isPresentingDrawer: Bool
+    let dimmingView = UIView()
+    init(isPresentingDrawer: Bool) {
+        self.isPresentingDrawer = isPresentingDrawer
+    }
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.2
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        // Retrieve the view controllers participating in the current transition from the context.
+        let fromView = transitionContext.viewController(forKey: .from)!.view!
+        let toView = transitionContext.viewController(forKey: .to)!.view!
+
+        // If the view to transition from is this controller's view, the drawer is being presented.
+//        let isPresentingDrawer = fromView == view
+        
+        let drawerView = isPresentingDrawer ? toView : fromView
+
+        if isPresentingDrawer {
+            // Any presented views must be part of the container view's hierarchy
+            
+            transitionContext.containerView.addSubview(dimmingView)
+            dimmingView.frame = transitionContext.containerView.bounds
+            dimmingView.alpha = 0.0
+            dimmingView.backgroundColor = .black
+            transitionContext.containerView.addSubview(drawerView)
+        }
+        
+
+        /***** Animation *****/
+        
+        
+        
+        let drawerSize = CGSize(
+            width: UIScreen.main.bounds.size.width * 0.8,
+            height: UIScreen.main.bounds.size.height / 2)
+        
+        // Determine the drawer frame for both on and off screen positions.
+        let offScreenDrawerFrame = CGRect(origin: CGPoint(x: transitionContext.containerView.bounds.width / 2, y:transitionContext.containerView.bounds.height / 2), size: CGSize(width: 0, height: 0))
+        let onScreenDrawerFrame = CGRect(origin: CGPoint(x: transitionContext.containerView.bounds.width / 2 - drawerSize.width / 2, y: drawerSize.height / 2), size: drawerSize)
+        
+        let offScreenDrawerAlpha = 0.0
+        let onScreenDrawerAlpha = 1.0
+        
+        let offScreenDrawerCorner = 15
+        let onScreenDrawerCorner = 15
+        
+        // 遷移前の状態
+        drawerView.frame = isPresentingDrawer ? onScreenDrawerFrame : onScreenDrawerFrame
+        drawerView.alpha = CGFloat(isPresentingDrawer ? offScreenDrawerAlpha : onScreenDrawerAlpha)
+        drawerView.layer.cornerRadius = CGFloat(isPresentingDrawer ? offScreenDrawerCorner : onScreenDrawerCorner)
+        dimmingView.alpha = isPresentingDrawer ? 0.0 : 0.5
+        let animationDuration = transitionDuration(using: transitionContext)
+        
+        // Animate the drawer sliding in and out.
+        UIView.animate(withDuration: animationDuration, animations: {
+            // 遷移後の状態
+            drawerView.frame = self.isPresentingDrawer ? onScreenDrawerFrame : onScreenDrawerFrame
+            drawerView.alpha = CGFloat(self.isPresentingDrawer ? onScreenDrawerAlpha : offScreenDrawerAlpha)
+            drawerView.layer.cornerRadius = CGFloat(self.isPresentingDrawer ? onScreenDrawerCorner : offScreenDrawerCorner)
+            self.dimmingView.alpha = self.isPresentingDrawer ? 0.5 : 0.0
+            
+        }, completion: { (success) in
+            // Cleanup view hierarchy
+            if !self.isPresentingDrawer {
+                drawerView.removeFromSuperview()
+            }
+            
+            // IMPORTANT: Notify UIKit that the transition is complete.
+            transitionContext.completeTransition(success)
+        })
+    }
 }
 

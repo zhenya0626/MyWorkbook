@@ -13,32 +13,22 @@ class PickerModalViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.transitioningDelegate = self
-        contentView.layer.cornerRadius = 15
+//        self.transitioningDelegate = self
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "PickerModalTableViewCell", bundle: nil), forCellReuseIdentifier: "PickerModalTableViewCell")
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         
-        
-        
-        // Do any additional setup after loading the view.
+        //右上と左下を角丸にする設定
+        titleLabel.layer.masksToBounds = true
+        titleLabel.layer.cornerRadius = 15
+        titleLabel.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 protocol PickerModalViewDelegate {
@@ -61,21 +51,19 @@ extension PickerModalViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PickerModalTableViewCell", for: indexPath) as! PickerModalTableViewCell
         cell.setUpCell(text: delegate?.list[indexPath.item] ?? "default value")
+        cell.selectionStyle = .none
         return cell 
     }
 
-    
-    
-    
 }
-extension PickerModalViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HorizontalAnimator(scrollDirection: .left)
-    }
-
-    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return HorizontalAnimator(scrollDirection: .right)
-    }
-}
+//extension PickerModalViewController: UIViewControllerTransitioningDelegate {
+//    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return HorizontalAnimator(scrollDirection: .left)
+//    }
+//
+//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return HorizontalAnimator(scrollDirection: .right)
+//    }
+//}
 
 

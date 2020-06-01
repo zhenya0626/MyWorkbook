@@ -10,6 +10,8 @@ import UIKit
 
 class PickerModalTableViewCell: UITableViewCell {
 
+//    @IBOutlet weak var cellContentView: UIView!
+    
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +25,12 @@ class PickerModalTableViewCell: UITableViewCell {
     }
     func setUpCell(text: String) {
         titleLabel.text = text
-        self.layer.cornerRadius = 15
-        self.backgroundColor = .white
-        titleLabel.textColor = .mintgreen
+        // 枠線の色
+        titleLabel.layer.borderColor = UIColor.mintgreen.cgColor
+        // 枠線の太さ
+        titleLabel.layer.borderWidth = 1
+        // 角丸
+        titleLabel.layer.cornerRadius = 15
     }
     
 }
