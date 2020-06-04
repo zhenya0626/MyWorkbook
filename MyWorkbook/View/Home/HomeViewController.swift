@@ -56,6 +56,9 @@ class HomeViewController: UIViewController {
 
         // ②-1 データソースを実装する - dataSourceにselfを設定
         questionTableView.dataSource = self
+        
+        // デリゲートも追加
+        questionTableView.delegate = self
 
         // ③-1 セルとセルの間の線を消す
         questionTableView.separatorStyle = .none
@@ -217,9 +220,15 @@ extension UICollectionView {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
-
-    
+    // セルがタップされた時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
+        cell.changeColor(color: .white)
+        //これを追加すれば解決
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+        let detailVC = DetailViewController()
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 // ②-2 データソースを実装する - UITableViewDataSourceを実装する
 extension HomeViewController: UITableViewDataSource {
@@ -238,14 +247,6 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
         cell.changeColor(color: .whitegray)
     }
-    // セルがタップされた時の処理
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! QuestionTableViewCell
-        cell.changeColor(color: .white)
-        //これを追加すれば解決
-        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-    }
-
 }
 
 

@@ -28,6 +28,11 @@ class ProblemViewController: UIViewController {
     @IBOutlet weak var answerImageHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // ナビゲーションバーの self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのタイトル指定
+        self.navigationItem.title = "問題追加"
+        // ナビゲーションバーのタイトル色指定
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         let img1 = UIImage(named: "biseki")
         let w1 = img1?.size.width ?? 0
         let h1 = img1?.size.height ?? 1
@@ -114,6 +119,11 @@ class ProblemViewController: UIViewController {
         pickerModalVC.delegate = self
         self.present(pickerModalVC, animated: true, completion: nil)
     }
+    @IBAction func toPracticeButtonAction(_ sender: Any) {
+        let practiceVC = PracticeViewController()
+        self.navigationController?.pushViewController(practiceVC, animated: true)
+    }
+    
 }
 extension ProblemViewController: UIPickerViewDelegate {
     

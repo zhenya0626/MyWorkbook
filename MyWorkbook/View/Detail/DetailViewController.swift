@@ -1,18 +1,22 @@
 //
-//  PracticeViewController.swift
+//  DetailViewController.swift
 //  MyWorkbook
 //
-//  Created by abi01373 on 2020/05/10.
+//  Created by abi01373 on 2020/06/04.
 //  Copyright © 2020 zhenya. All rights reserved.
 //
 
 import UIKit
 
-class PracticeViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // ナビゲーションバーの self.navigationController?.navigationBar.tintColor = .white
+        // ナビゲーションバーのタイトル指定
+        self.navigationItem.title = "問題名"
+        // ナビゲーションバーのタイトル色指定
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         // Do any additional setup after loading the view.
     }
 
