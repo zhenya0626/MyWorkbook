@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let homeVC = HomeViewController(nibName: nil, bundle: nil)
         window.rootViewController = UINavigationController(rootViewController: homeVC)
         window.makeKeyAndVisible()
+        FirebaseApp.configure()
     }
 
     @available(iOS 13.0, *)

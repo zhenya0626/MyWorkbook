@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3108BAF87E0ADB70D244447D /* Pods_MyWorkbook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB78BE4B8F38B353C47883C /* Pods_MyWorkbook.framework */; };
 		692255092468698600D0D31F /* UIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692255082468698600D0D31F /* UIApplication+.swift */; };
 		69225544246A9C7D00D0D31F /* CheckCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69225542246A9C7D00D0D31F /* CheckCollectionViewCell.swift */; };
 		69225545246A9C7D00D0D31F /* CheckCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69225543246A9C7D00D0D31F /* CheckCollectionViewCell.xib */; };
@@ -19,8 +20,13 @@
 		692B86B224788FB000A416BF /* SubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86B024788FB000A416BF /* SubjectViewController.xib */; };
 		692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B86B6247902B100A416BF /* CategoryTableViewCell.swift */; };
 		692B86B9247902B100A416BF /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86B7247902B100A416BF /* CategoryTableViewCell.xib */; };
+		692DAEDC248EFB870050897D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692DAEDB248EFB870050897D /* HomeViewModel.swift */; };
 		695D7A132489227C0096DC20 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A112489227C0096DC20 /* DetailViewController.swift */; };
 		695D7A142489227C0096DC20 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 695D7A122489227C0096DC20 /* DetailViewController.xib */; };
+		695D7A17248B48AD0096DC20 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A16248B48AD0096DC20 /* Subject.swift */; };
+		695D7A19248B6C260096DC20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 695D7A18248B6C260096DC20 /* GoogleService-Info.plist */; };
+		695D7A1B248BA60C0096DC20 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A1A248BA60C0096DC20 /* User.swift */; };
+		695D7A1D248BCB960096DC20 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A1C248BCB960096DC20 /* UserViewModel.swift */; };
 		6998950D246D9E5C0063E7C3 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998950C246D9E5C0063E7C3 /* CustomUITextField.swift */; };
 		6998950F246E111E0063E7C3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6998950E246E111E0063E7C3 /* PaddingLabel.swift */; };
 		69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A149A1246829A100F94D07 /* AppDelegate.swift */; };
@@ -43,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E113149C7645A01EB44DB42 /* Pods-MyWorkbook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWorkbook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook.debug.xcconfig"; sourceTree = "<group>"; };
+		5FB78BE4B8F38B353C47883C /* Pods_MyWorkbook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWorkbook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692255082468698600D0D31F /* UIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+.swift"; sourceTree = "<group>"; };
 		69225542246A9C7D00D0D31F /* CheckCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckCollectionViewCell.swift; sourceTree = "<group>"; };
 		69225543246A9C7D00D0D31F /* CheckCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -55,8 +63,13 @@
 		692B86B024788FB000A416BF /* SubjectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectViewController.xib; sourceTree = "<group>"; };
 		692B86B6247902B100A416BF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		692B86B7247902B100A416BF /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		692DAEDB248EFB870050897D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		695D7A112489227C0096DC20 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		695D7A122489227C0096DC20 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		695D7A16248B48AD0096DC20 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		695D7A18248B6C260096DC20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		695D7A1A248BA60C0096DC20 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		695D7A1C248BCB960096DC20 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		6998950C246D9E5C0063E7C3 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		6998950E246E111E0063E7C3 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		69A1499E246829A100F94D07 /* MyWorkbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorkbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +91,7 @@
 		69EBD57724834DC00094A2D0 /* PickerModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerModalTableViewCell.swift; sourceTree = "<group>"; };
 		69EBD57824834DC00094A2D0 /* PickerModalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerModalTableViewCell.xib; sourceTree = "<group>"; };
 		69EBD57C2483E0EB0094A2D0 /* CustomAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnimator.swift; sourceTree = "<group>"; };
+		C28237E20AA16265E5175301 /* Pods-MyWorkbook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWorkbook.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +99,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3108BAF87E0ADB70D244447D /* Pods_MyWorkbook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6244AAFC9FF6589A9995E7B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E113149C7645A01EB44DB42 /* Pods-MyWorkbook.debug.xcconfig */,
+				C28237E20AA16265E5175301 /* Pods-MyWorkbook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6922550A2468752600D0D31F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +139,7 @@
 		692B86B32478DAB400A416BF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				695D7A1C248BCB960096DC20 /* UserViewModel.swift */,
 				692B86B42478DAC400A416BF /* Category */,
 			);
 			path = ViewModel;
@@ -136,13 +161,77 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		695D7A10248922670096DC20 /* Detail */ = {
+		692DAED5248EF7AF0050897D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				692B86AE24788F8800A416BF /* StackedView */,
+				692B86AA24788E9B00A416BF /* CategoryViewController.swift */,
+				692B86AB24788E9B00A416BF /* CategoryViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		692DAED6248EF7CD0050897D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6922550A2468752600D0D31F /* Cell */,
+				69A149B9246829F100F94D07 /* HomeViewController.swift */,
+				69A149BA246829F100F94D07 /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		692DAED7248EF7DE0050897D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69EBD5712483457D0094A2D0 /* PickerModal */,
+				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
+				69A149C6246840B100F94D07 /* ProblemViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		692DAED8248EF7EB0050897D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69A149C12468400100F94D07 /* PracticeViewController.swift */,
+				69A149C22468400100F94D07 /* PracticeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		692DAED9248EF7FE0050897D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				695D7A112489227C0096DC20 /* DetailViewController.swift */,
 				695D7A122489227C0096DC20 /* DetailViewController.xib */,
 			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		692DAEDA248EFB720050897D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				692DAEDB248EFB870050897D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		695D7A10248922670096DC20 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				692DAED9248EF7FE0050897D /* View */,
+			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		695D7A15248B48150096DC20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				695D7A16248B48AD0096DC20 /* Subject.swift */,
+				695D7A1A248BA60C0096DC20 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		69A14995246829A100F94D07 = {
@@ -150,6 +239,8 @@
 			children = (
 				69A149A0246829A100F94D07 /* MyWorkbook */,
 				69A1499F246829A100F94D07 /* Products */,
+				6244AAFC9FF6589A9995E7B5 /* Pods */,
+				6F1A2FA21821AECEE94FF830 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +255,7 @@
 		69A149A0246829A100F94D07 /* MyWorkbook */ = {
 			isa = PBXGroup;
 			children = (
+				695D7A15248B48150096DC20 /* Model */,
 				692B86B32478DAB400A416BF /* ViewModel */,
 				69A149C92468619D00F94D07 /* Util */,
 				69A149B8246829E100F94D07 /* View */,
@@ -173,6 +265,7 @@
 				69A149AF246829A300F94D07 /* LaunchScreen.storyboard */,
 				69A149B2246829A300F94D07 /* Info.plist */,
 				69A149AA246829A100F94D07 /* MyWorkbook.xcdatamodeld */,
+				695D7A18248B6C260096DC20 /* GoogleService-Info.plist */,
 			);
 			path = MyWorkbook;
 			sourceTree = "<group>";
@@ -205,9 +298,7 @@
 		69DC840E246C055A00733E8C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				692B86AE24788F8800A416BF /* StackedView */,
-				692B86AA24788E9B00A416BF /* CategoryViewController.swift */,
-				692B86AB24788E9B00A416BF /* CategoryViewController.xib */,
+				692DAED5248EF7AF0050897D /* View */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -215,9 +306,8 @@
 		69DC840F246C057400733E8C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				6922550A2468752600D0D31F /* Cell */,
-				69A149B9246829F100F94D07 /* HomeViewController.swift */,
-				69A149BA246829F100F94D07 /* HomeViewController.xib */,
+				692DAEDA248EFB720050897D /* ViewModel */,
+				692DAED6248EF7CD0050897D /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -225,9 +315,7 @@
 		69EBD5702481F4820094A2D0 /* Problem */ = {
 			isa = PBXGroup;
 			children = (
-				69EBD5712483457D0094A2D0 /* PickerModal */,
-				69A149C5246840B100F94D07 /* ProblemViewController.swift */,
-				69A149C6246840B100F94D07 /* ProblemViewController.xib */,
+				692DAED7248EF7DE0050897D /* View */,
 			);
 			path = Problem;
 			sourceTree = "<group>";
@@ -262,10 +350,17 @@
 		69EBD5D3248544F90094A2D0 /* Practice */ = {
 			isa = PBXGroup;
 			children = (
-				69A149C12468400100F94D07 /* PracticeViewController.swift */,
-				69A149C22468400100F94D07 /* PracticeViewController.xib */,
+				692DAED8248EF7EB0050897D /* View */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		6F1A2FA21821AECEE94FF830 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FB78BE4B8F38B353C47883C /* Pods_MyWorkbook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +370,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69A149B5246829A300F94D07 /* Build configuration list for PBXNativeTarget "MyWorkbook" */;
 			buildPhases = (
+				D549FFDADF8E6973E954DF2F /* [CP] Check Pods Manifest.lock */,
 				69A1499A246829A100F94D07 /* Sources */,
 				69A1499B246829A100F94D07 /* Frameworks */,
 				69A1499C246829A100F94D07 /* Resources */,
+				2FB77D907EA66EA8F7F639B4 /* [CP] Embed Pods Frameworks */,
+				4D0F2BCEA2E149CE23863568 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -339,10 +437,83 @@
 				692B86B224788FB000A416BF /* SubjectViewController.xib in Resources */,
 				69A149AE246829A300F94D07 /* Assets.xcassets in Resources */,
 				69A149BC246829F100F94D07 /* HomeViewController.xib in Resources */,
+				695D7A19248B6C260096DC20 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FB77D907EA66EA8F7F639B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D0F2BCEA2E149CE23863568 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D549FFDADF8E6973E954DF2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyWorkbook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69A1499A246829A100F94D07 /* Sources */ = {
@@ -359,12 +530,16 @@
 				695D7A132489227C0096DC20 /* DetailViewController.swift in Sources */,
 				69EBD574248345AB0094A2D0 /* PickerModalViewController.swift in Sources */,
 				6998950D246D9E5C0063E7C3 /* CustomUITextField.swift in Sources */,
+				695D7A1D248BCB960096DC20 /* UserViewModel.swift in Sources */,
+				695D7A1B248BA60C0096DC20 /* User.swift in Sources */,
 				692B86312473FB9F00A416BF /* QuestionTableViewCell.swift in Sources */,
 				692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */,
 				692B86B124788FB000A416BF /* SubjectViewController.swift in Sources */,
 				69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */,
 				69A149A4246829A100F94D07 /* SceneDelegate.swift in Sources */,
 				692255092468698600D0D31F /* UIApplication+.swift in Sources */,
+				695D7A17248B48AD0096DC20 /* Subject.swift in Sources */,
+				692DAEDC248EFB870050897D /* HomeViewModel.swift in Sources */,
 				69A149C32468400100F94D07 /* PracticeViewController.swift in Sources */,
 				69225547246AC91B00D0D31F /* CheckBox.swift in Sources */,
 				69A149AC246829A100F94D07 /* MyWorkbook.xcdatamodeld in Sources */,
@@ -502,6 +677,7 @@
 		};
 		69A149B6246829A300F94D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E113149C7645A01EB44DB42 /* Pods-MyWorkbook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,7 +687,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zhenya.MyWorkbook;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.rokuapp.MyWorkbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,6 +696,7 @@
 		};
 		69A149B7246829A300F94D07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C28237E20AA16265E5175301 /* Pods-MyWorkbook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,7 +706,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = zhenya.MyWorkbook;
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.rokuapp.MyWorkbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

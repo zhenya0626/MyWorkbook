@@ -14,7 +14,6 @@ extension UIColor {
         return UIColor(named: "ultramarine")!
     }
     
-    
     /// 群青色 25濃  ultramarine RGB:#343F82
     class var ultromarine_dark25: UIColor {
         return UIColor(named: "ultromarine_dark25")!

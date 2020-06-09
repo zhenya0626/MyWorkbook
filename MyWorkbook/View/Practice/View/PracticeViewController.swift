@@ -29,8 +29,6 @@ class PracticeViewController: UIViewController {
                // ナビゲーションバーのタイトル色指定
                self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .white
-        
-              
         timerLabel.text = "0"
 
         // Do any additional setup after loading the view.

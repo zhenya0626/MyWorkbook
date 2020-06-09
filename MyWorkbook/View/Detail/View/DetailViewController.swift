@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
         self.navigationItem.title = "問題名"
         // ナビゲーションバーのタイトル色指定
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
         // Do any additional setup after loading the view.
     }
 
