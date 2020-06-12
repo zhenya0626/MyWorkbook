@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Rswift
 
 class SignUpViewController: UIViewController {
     
@@ -66,7 +67,10 @@ class SignUpViewController: UIViewController {
     }
 
     func toList() {
-//        self.performSegue(withIdentifier: R.segue.signUpViewController.toList, sender: self)
+        
+        let homeVC = HomeViewController(nib: R.nib.homeViewController)
+        present(homeVC, animated: true, completion: nil)
+
     }
 }
 

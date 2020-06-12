@@ -30,6 +30,7 @@
 		692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692B86B6247902B100A416BF /* CategoryTableViewCell.swift */; };
 		692B86B9247902B100A416BF /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 692B86B7247902B100A416BF /* CategoryTableViewCell.xib */; };
 		692DAEDC248EFB870050897D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692DAEDB248EFB870050897D /* HomeViewModel.swift */; };
+		69546694249448D700CF9C41 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69546693249448D700CF9C41 /* R.generated.swift */; };
 		695D7A132489227C0096DC20 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A112489227C0096DC20 /* DetailViewController.swift */; };
 		695D7A142489227C0096DC20 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 695D7A122489227C0096DC20 /* DetailViewController.xib */; };
 		695D7A17248B48AD0096DC20 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695D7A16248B48AD0096DC20 /* Subject.swift */; };
@@ -82,6 +83,7 @@
 		692B86B6247902B100A416BF /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		692B86B7247902B100A416BF /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		692DAEDB248EFB870050897D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		69546693249448D700CF9C41 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		695D7A112489227C0096DC20 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		695D7A122489227C0096DC20 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		695D7A16248B48AD0096DC20 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		69A14995246829A100F94D07 = {
 			isa = PBXGroup;
 			children = (
+				69546693249448D700CF9C41 /* R.generated.swift */,
 				69A149A0246829A100F94D07 /* MyWorkbook */,
 				69A1499F246829A100F94D07 /* Products */,
 				6244AAFC9FF6589A9995E7B5 /* Pods */,
@@ -422,6 +425,7 @@
 			buildConfigurationList = 69A149B5246829A300F94D07 /* Build configuration list for PBXNativeTarget "MyWorkbook" */;
 			buildPhases = (
 				D549FFDADF8E6973E954DF2F /* [CP] Check Pods Manifest.lock */,
+				69546692249445A700CF9C41 /* ShellScript */,
 				69A1499A246829A100F94D07 /* Sources */,
 				69A1499B246829A100F94D07 /* Frameworks */,
 				69A1499C246829A100F94D07 /* Resources */,
@@ -531,6 +535,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyWorkbook/Pods-MyWorkbook-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		69546692249445A700CF9C41 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n\n";
+		};
 		D549FFDADF8E6973E954DF2F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,6 +603,7 @@
 				6900036F24925309004314C1 /* ErrorTracker.swift in Sources */,
 				692B86312473FB9F00A416BF /* QuestionTableViewCell.swift in Sources */,
 				692B86B8247902B100A416BF /* CategoryTableViewCell.swift in Sources */,
+				69546694249448D700CF9C41 /* R.generated.swift in Sources */,
 				692B86B124788FB000A416BF /* SubjectViewController.swift in Sources */,
 				69A149A2246829A100F94D07 /* AppDelegate.swift in Sources */,
 				69A149A4246829A100F94D07 /* SceneDelegate.swift in Sources */,

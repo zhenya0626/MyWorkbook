@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let homeVC = HomeViewController(nibName: nil, bundle: nil)
-        window.rootViewController = UINavigationController(rootViewController: homeVC)
+        let signUpVC = SignUpViewController(nibName: nil, bundle: nil)
+        window.rootViewController = UINavigationController(rootViewController: signUpVC)
         window.makeKeyAndVisible()
         FirebaseApp.configure()
     }

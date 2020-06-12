@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             let window = UIWindow(frame: UIScreen.main.bounds)
             self.window = window
-            let homeVC = HomeViewController(nibName: nil, bundle: nil)
-            window.rootViewController = UINavigationController(rootViewController: homeVC)
+            let signUpVC = SignUpViewController(nibName: nil, bundle: nil)
+            window.rootViewController = UINavigationController(rootViewController: signUpVC)
             window.makeKeyAndVisible()
             FirebaseApp.configure()
         }

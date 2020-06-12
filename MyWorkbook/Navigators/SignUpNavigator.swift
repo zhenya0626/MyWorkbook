@@ -20,6 +20,7 @@ class SignUpNavigator {
     }
     
     func toList() {
-//        viewController?.performSegue(withIdentifier: R.segue.signUpViewController.toList, sender: nil)
+        let homeVC = HomeViewController(nib: R.nib.homeViewController)
+        viewController?.present(homeVC, animated: true, completion: nil)
     }
 }
