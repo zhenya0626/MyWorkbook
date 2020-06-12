@@ -27,7 +27,7 @@ class SignUpViewModel: ViewModelType {
         let login: Driver<Void>
         let error: Driver<Error>
     }
-    // SharedSequenceConvertibleType型らしい何これ
+    // SharedSequenceConvertibleType型らしい何これ　asDriver()できるらしい
     struct State {
         let error = ErrorTracker()
     }
@@ -42,6 +42,7 @@ class SignUpViewModel: ViewModelType {
     
     func transform(input: SignUpViewModel.Input) -> SignUpViewModel.Output {
         let state = State()
+        // combineLatestはemail・passwordそれぞれが更新された時、それぞれの最新状態をまとめたアイテムを発行する。
         let requiredInputs = Driver.combineLatest(input.email, input.password)
         let signUp = input.signUpTrigger
             .withLatestFrom(requiredInputs)
