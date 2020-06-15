@@ -63,7 +63,8 @@ class SignUpViewController: UIViewController {
     }
     
     func toLogin() {
-//        self.performSegue(withIdentifier: R.segue.signUpViewController.toLogin, sender: self)
+        let loginVC = LoginViewController(nib: R.nib.loginViewController)
+        present(loginVC, animated: true, completion: nil)
     }
 
     func toList() {

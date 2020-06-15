@@ -16,7 +16,8 @@ class SignUpNavigator {
     }
     
     func toLogin() {
-//        viewController?.performSegue(withIdentifier: R.segue.signUpViewController.toLogin, sender: nil)
+        let loginVC = LoginViewController(nib: R.nib.loginViewController)
+        viewController?.present(loginVC, animated: true, completion: nil)
     }
     
     func toList() {
