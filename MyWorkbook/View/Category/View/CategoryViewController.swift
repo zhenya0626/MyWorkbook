@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CategoryViewController: UIViewController {
 
@@ -14,9 +16,15 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     let sectionTitle = ["教科", "問題集", "タグ"]
     
+    var categoryViewModel: CategoryViewModel!
+    let disposeBag = DisposeBag()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initializeViewModel()
+        
         scrollView.showsVerticalScrollIndicator = false
         
         let subject = SubjectViewController.init(nibName: "SubjectViewController", bundle: nil)
@@ -36,5 +44,11 @@ class CategoryViewController: UIViewController {
         stackView.addArrangedSubview(tag.view)
 
         // Do any additional setup after loading the view.
+    }
+    func initializeViewModel() {
+        categoryViewModel = CategoryViewModel(
+            with: SubjectModel(),
+            and: CategoryNavigator(with: self)
+        )
     }
 }

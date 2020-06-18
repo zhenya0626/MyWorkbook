@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    let viewModel = HomeViewModel()
+    var viewModel: HomeViewModel!
     
     @IBOutlet weak var subjectCollectionView: UICollectionView!
     
@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNav()
+        initializeViewModel()
         
         // 教科 コレクションビュー Tag 0
         subjectCollectionView.dataSource = self
@@ -94,6 +95,9 @@ class HomeViewController: UIViewController {
 
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    func initializeViewModel() {
+        viewModel = HomeViewModel(with: SubjectModel() , and: HomeNavigator(with: self))
     }
 
     @objc func keyboardWillBeShown(notification: Notification) {

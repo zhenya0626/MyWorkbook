@@ -15,8 +15,12 @@ class LoginNavigator {
         self.viewController = viewController
     }
     
-    func toList() {
+    func toHome() {
+        // 戻るボタンを表示しない
         let homeVC = HomeViewController(nib: R.nib.homeViewController)
-        viewController?.present(homeVC, animated: true, completion: nil)}
+        homeVC.navigationItem.hidesBackButton = true
+        viewController?.navigationController?.pushViewController(homeVC, animated: true)
+        
+    }
 }
 

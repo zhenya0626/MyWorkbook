@@ -45,7 +45,7 @@ class LoginViewModel: ViewModelType {
                 return self.authModel.login(with: email, and: password)
                     .do(onNext: { [unowned self] user in
                         if user.isEmailVerified {
-                            self.navigator.toList()
+                            self.navigator.toHome()
                         }
                     })
                     .trackError(state.error)

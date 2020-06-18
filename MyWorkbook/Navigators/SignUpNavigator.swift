@@ -17,11 +17,13 @@ class SignUpNavigator {
     
     func toLogin() {
         let loginVC = LoginViewController(nib: R.nib.loginViewController)
-        viewController?.present(loginVC, animated: true, completion: nil)
+        viewController?.navigationController?.pushViewController(loginVC, animated: true)
     }
     
-    func toList() {
+    func toHome() {
         let homeVC = HomeViewController(nib: R.nib.homeViewController)
-        viewController?.present(homeVC, animated: true, completion: nil)
+        // 戻るボタンを表示しない
+        homeVC.navigationItem.hidesBackButton = true
+        viewController?.navigationController?.pushViewController(homeVC, animated: true)
     }
 }

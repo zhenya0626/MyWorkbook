@@ -67,7 +67,7 @@ class SignUpViewController: UIViewController {
         present(loginVC, animated: true, completion: nil)
     }
 
-    func toList() {
+    func toHome() {
         
         let homeVC = HomeViewController(nib: R.nib.homeViewController)
         present(homeVC, animated: true, completion: nil)

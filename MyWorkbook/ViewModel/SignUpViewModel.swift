@@ -61,7 +61,7 @@ class SignUpViewModel: ViewModelType {
             .flatMapLatest { [unowned self] _ in
                 return self.authModel.checkLogin()
                     .map { [unowned self] isLogin in
-                        if isLogin { self.navigator.toList() }
+                        if isLogin { self.navigator.toHome() }
                 }
                 .trackError(state.error)
                 .asDriver(onErrorJustReturn: ())
