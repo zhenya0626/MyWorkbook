@@ -40,11 +40,11 @@ class CategoryViewModel: ViewModelType {
       let error = ErrorTracker()
     }
 
-    private let postModel: SubjectModel
+    private let subjectModel: SubjectModel
     private let navigator: CategoryNavigator
 
     init(with postModel: SubjectModel, and navigator: CategoryNavigator) {
-      self.postModel = postModel
+      self.subjectModel = postModel
       self.navigator = navigator
     }
 
@@ -52,7 +52,7 @@ class CategoryViewModel: ViewModelType {
       let state = State()
       let load = input.trigger
           .flatMap { [unowned self] _ in
-              return self.postModel.read()
+              return self.subjectModel.read()
                   .map { snap in
                       var posts: [Subject] = []
                       if !snap.isEmpty {
@@ -79,11 +79,13 @@ class CategoryViewModel: ViewModelType {
       }
       let delete = input.deleteTrigger
           .flatMapLatest { [unowned self] index in
-              return self.postModel.delete(state.contentArray.array[index].id)
+              return self.subjectModel.delete(state.contentArray.array[index].id)
                   .asDriver(onErrorJustReturn: ())
       }
       let toPost = input.postTrigger
           .do(onNext: { [unowned self] _ in
+            let test:Observable<Void> = self.subjectModel.create(with: "数学")
+            print(test)
               self.navigator.toList()
           })
       return CategoryViewModel.Output(load: load,

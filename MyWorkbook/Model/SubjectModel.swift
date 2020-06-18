@@ -35,6 +35,7 @@ class SubjectModel {
                 "date": Date()
             ]) { error in
                 if let e = error {
+                    print("エッらら", e)
                     observer.onError(e)
                     return
                 }

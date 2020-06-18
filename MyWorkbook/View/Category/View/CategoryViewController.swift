@@ -18,12 +18,17 @@ class CategoryViewController: UIViewController {
     
     var categoryViewModel: CategoryViewModel!
     let disposeBag = DisposeBag()
+    
+    var tableView = UITableView()
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeViewModel()
+        bindViewModel()
+        
+        stackView.addArrangedSubview(tableView)
         
         scrollView.showsVerticalScrollIndicator = false
         
@@ -51,4 +56,22 @@ class CategoryViewController: UIViewController {
             and: CategoryNavigator(with: self)
         )
     }
+    func bindViewModel() {
+        let input = CategoryViewModel.Input(trigger: Driver.just(()),
+                                        postTrigger:  Driver.just(()),
+                                        selectTrigger: tableView.rx.itemSelected.asDriver().map { $0.row },
+                                        deleteTrigger: tableView.rx.itemDeleted.asDriver().map { $0.row })
+        let output = categoryViewModel.transform(input: input)
+        
+        output.posts
+            .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.categoryTableViewCell.identifier, cellType: CategoryTableViewCell.self)) { (row, element, cell) in
+                cell.setUpCell(text: element.content)
+            }
+            .disposed(by: disposeBag)
+        output.load.drive().disposed(by: disposeBag)
+        output.select.drive().disposed(by: disposeBag)
+        output.delete.drive().disposed(by: disposeBag)
+        output.toPost.drive().disposed(by: disposeBag)
+    }
 }
+
