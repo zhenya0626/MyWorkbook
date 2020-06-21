@@ -39,6 +39,7 @@ class SubjectModel {
                     observer.onError(e)
                     return
                 }
+                print("あああ")
                 observer.onNext(())
             }
             return Disposables.create()

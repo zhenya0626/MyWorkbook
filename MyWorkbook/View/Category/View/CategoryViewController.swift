@@ -25,8 +25,6 @@ class CategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initializeViewModel()
-        bindViewModel()
         
         stackView.addArrangedSubview(tableView)
         
@@ -50,28 +48,6 @@ class CategoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    func initializeViewModel() {
-        categoryViewModel = CategoryViewModel(
-            with: SubjectModel(),
-            and: CategoryNavigator(with: self)
-        )
-    }
-    func bindViewModel() {
-        let input = CategoryViewModel.Input(trigger: Driver.just(()),
-                                        postTrigger:  Driver.just(()),
-                                        selectTrigger: tableView.rx.itemSelected.asDriver().map { $0.row },
-                                        deleteTrigger: tableView.rx.itemDeleted.asDriver().map { $0.row })
-        let output = categoryViewModel.transform(input: input)
-        
-        output.posts
-            .drive(tableView.rx.items(cellIdentifier: R.reuseIdentifier.categoryTableViewCell.identifier, cellType: CategoryTableViewCell.self)) { (row, element, cell) in
-                cell.setUpCell(text: element.content)
-            }
-            .disposed(by: disposeBag)
-        output.load.drive().disposed(by: disposeBag)
-        output.select.drive().disposed(by: disposeBag)
-        output.delete.drive().disposed(by: disposeBag)
-        output.toPost.drive().disposed(by: disposeBag)
-    }
+
 }
 
