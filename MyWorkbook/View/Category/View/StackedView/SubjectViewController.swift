@@ -95,13 +95,11 @@ class SubjectViewController: UIViewController {
     }
     /// ViewModelをバインド
     func bindViewModel() {
-        let input = SubjectViewModel.Input(trigger: Driver.just(()),
-                                           insertpostTrigger: addButton.rx.tap.asDriver(),
-//                                           selectTrigger: textField.rx.text
-//                                            .map { if let t = $0 { return t } else { return "" } }
-//                                            .asDriver(onErrorJustReturn: ""),
-                                           deleteTrigger: tableView.rx.itemSelected.asDriver().map { $0.row },
-                                           content: tableView.rx.itemDeleted.asDriver().map { $0.row })
+        let input = SubjectViewModel.Input(
+            trigger: Driver.just(()),
+            insertTrigger: addButton.rx.tap.asDriver(),
+            content:  textField.rx.text.orEmpty.asObservable().asDriver(onErrorJustReturn: "")
+        )
         let output = subjectViewModel.transform(input: input)
 
         output.posts
@@ -109,10 +107,11 @@ class SubjectViewController: UIViewController {
                 cell.setUpCell(text: element.content)
             }
             .disposed(by: disposeBag)
-        output.load.drive().disposed(by: disposeBag)
-        output.select.drive().disposed(by: disposeBag)
-        output.delete.drive().disposed(by: disposeBag)
-        output.toPost.drive().disposed(by: disposeBag)
+//        output.load.drive().disposed(by: disposeBag)
+        output.insert.drive().disposed(by: disposeBag)
+//        output.select.drive().disposed(by: disposeBag)
+//        output.delete.drive().disposed(by: disposeBag)
+//        output.toPost.drive().disposed(by: disposeBag)
     }
 //
 }

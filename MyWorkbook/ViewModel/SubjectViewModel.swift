@@ -16,19 +16,19 @@ class SubjectViewModel: ViewModelType {
     struct Input {
         let trigger: Driver<Void>
         let insertTrigger: Driver<Void>
-//        let selectTrigger: Driver<Int>
-        let deleteTrigger: Driver<Int>
+////        let selectTrigger: Driver<Int>
+//        let deleteTrigger: Driver<Int>
         let content: Driver<String>
     }
     
     struct Output {
-        let load: Driver<Void>
+//        let load: Driver<Void>
         let insert: Driver<Void>
         let posts: Driver<[Subject]>
 //        let select: Driver<Void>
-        let delete: Driver<Void>
-        let isLoading: Driver<Bool>
-        let error: Driver<Error>
+//        let delete: Driver<Void>
+//        let isLoading: Driver<Bool>
+//        let error: Driver<Error>
     }
     
     struct State {
@@ -57,45 +57,46 @@ class SubjectViewModel: ViewModelType {
                     .trackError(state.error)
                     .asDriver(onErrorJustReturn: ())
         }
-        let load = input.trigger
-            .flatMap { [unowned self] _ in
-                return self.subjectModel.read()
-                    .map { snap in
-                        var posts: [Subject] = []
-                        if !snap.isEmpty {
-                            for item in snap.documents {
-                                posts.append(Subject(id: item.documentID,
-                                                     user: item["user"] as! String,
-                                                     content: item["content"] as! String,
-                                                     date: item["date"] as! Date)
-                                )
-                            }
-                        }
-                        return posts
-                }
-                .trackArray(state.contentArray)
-                .trackError(state.error)
-                .trackActivity(state.isLoading)
-                .mapToVoid()
-                .asDriverOnErrorJustComplete()
-        }
+//        let load = input.trigger
+//            .flatMap { [unowned self] _ in
+//                return self.subjectModel.read()
+//                    .map { snap in
+//                        var posts: [Subject] = []
+//                        if !snap.isEmpty {
+//                            for item in snap.documents {
+//                                posts.append(Subject(id: item.documentID,
+//                                                     user: item["user"] as! String,
+//                                                     content: item["content"] as! String,
+//                                                     date: item["date"] as! Date)
+//                                )
+//                            }
+//                        }
+//                        return posts
+//                }
+//                .trackArray(state.contentArray)
+//                .trackError(state.error)
+//                .trackActivity(state.isLoading)
+//                .mapToVoid()
+//                .asDriverOnErrorJustComplete()
+//        }
 //        let select = input.selectTrigger
 //            .withLatestFrom(state.contentArray) { [unowned self] (index: Int, posts: [Subject]) in
 //                //              self.navigator.toList()(with: posts[index])
 //                self.navigator.toList()
 //        }
-        let delete = input.deleteTrigger
-            .flatMapLatest { [unowned self] index in
-                return self.subjectModel.delete(state.contentArray.array[index].id)
-                    .asDriver(onErrorJustReturn: ())
-        }
-        return SubjectViewModel.Output(load: load,
+//        let delete = input.deleteTrigger
+//            .flatMapLatest { [unowned self] index in
+//                return self.subjectModel.delete(state.contentArray.array[index].id)
+//                    .asDriver(onErrorJustReturn: ())
+//        }
+        return SubjectViewModel.Output(
+//            load: load,
                                        insert: insert,
-                                       posts: state.contentArray.asDriver(),
+                                       posts: state.contentArray.asDriver()
 //                                       select: select,
-                                       delete: delete,
-                                       isLoading: state.isLoading.asDriver(),
-                                       error: state.error.asDriver())
+//                                       delete: delete,
+//                                       isLoading: state.isLoading.asDriver()
+)
     }
 }
 
