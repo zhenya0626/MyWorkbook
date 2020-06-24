@@ -13,7 +13,7 @@ import RxCocoa
 class SubjectViewModel: ViewModelType {
     let subjectArray = ["数学Ⅰ", "数学Ⅱ", "物理", "化学演習", "英語"]
     
-    struct Input {
+    struct Input {      
         let trigger: Driver<Void>
         let insertTrigger: Driver<Void>
 ////        let selectTrigger: Driver<Int>
@@ -22,7 +22,7 @@ class SubjectViewModel: ViewModelType {
     }
     
     struct Output {
-//        let load: Driver<Void>
+        let load: Driver<Void>
         let insert: Driver<Void>
         let posts: Driver<[Subject]>
 //        let select: Driver<Void>
@@ -57,28 +57,28 @@ class SubjectViewModel: ViewModelType {
                     .trackError(state.error)
                     .asDriver(onErrorJustReturn: ())
         }
-//        let load = input.trigger
-//            .flatMap { [unowned self] _ in
-//                return self.subjectModel.read()
-//                    .map { snap in
-//                        var posts: [Subject] = []
-//                        if !snap.isEmpty {
-//                            for item in snap.documents {
-//                                posts.append(Subject(id: item.documentID,
-//                                                     user: item["user"] as! String,
-//                                                     content: item["content"] as! String,
-//                                                     date: item["date"] as! Date)
-//                                )
-//                            }
-//                        }
-//                        return posts
-//                }
-//                .trackArray(state.contentArray)
-//                .trackError(state.error)
-//                .trackActivity(state.isLoading)
-//                .mapToVoid()
-//                .asDriverOnErrorJustComplete()
-//        }
+        let load = input.trigger
+            .flatMap { [unowned self] _ in
+                return self.subjectModel.read()
+                    .map { snap in
+                        var posts: [Subject] = []
+                        if !snap.isEmpty {
+                            for item in snap.documents {
+                                posts.append(Subject(id: item.documentID,
+                                                     user: item["user"] as! String,
+                                                     content: item["content"] as! String,
+                                                     date: item["date"] as? Date ?? Date())
+                                )
+                            }
+                        }
+                        return posts
+                }
+                .trackArray(state.contentArray)
+                .trackError(state.error)
+                .trackActivity(state.isLoading)
+                .mapToVoid()
+                .asDriverOnErrorJustComplete()
+        }
 //        let select = input.selectTrigger
 //            .withLatestFrom(state.contentArray) { [unowned self] (index: Int, posts: [Subject]) in
 //                //              self.navigator.toList()(with: posts[index])
@@ -90,7 +90,7 @@ class SubjectViewModel: ViewModelType {
 //                    .asDriver(onErrorJustReturn: ())
 //        }
         return SubjectViewModel.Output(
-//            load: load,
+            load: load,
                                        insert: insert,
                                        posts: state.contentArray.asDriver()
 //                                       select: select,

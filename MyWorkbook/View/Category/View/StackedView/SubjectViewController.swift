@@ -107,7 +107,7 @@ class SubjectViewController: UIViewController {
                 cell.setUpCell(text: element.content)
             }
             .disposed(by: disposeBag)
-//        output.load.drive().disposed(by: disposeBag)
+        output.load.drive().disposed(by: disposeBag)
         output.insert.drive().disposed(by: disposeBag)
 //        output.select.drive().disposed(by: disposeBag)
 //        output.delete.drive().disposed(by: disposeBag)
